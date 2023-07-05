@@ -119,3 +119,15 @@ input:focus {
 .fruits::after {
   content: "과일 목록 끝";
 }
+/* 기능 선택자 */
+input[disabled] {
+  background-color: aqua;
+}
+input[readonly] {
+  background-color: orange;
+}
+
+/* 속성 선택자 */
+input[type="password"] {
+  color: red;
+}

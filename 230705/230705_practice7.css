@@ -1,0 +1,11 @@
+input[disabled] {
+  background-color: red;
+}
+
+input[placeholder="이름"] {
+  background-color: orange;
+}
+
+input[value] {
+  background-color: blue;
+}
