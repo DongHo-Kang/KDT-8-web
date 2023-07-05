@@ -82,3 +82,31 @@ a:active {
 input:focus {
   background-color: lightgray;
 }
+
+/* first-child (형제 요소 첫번째 요소로 있으면 적용됨) */
+.fruits span:first-child {
+  color: red;
+}
+.fruits div:first-child {
+  color: blue;
+}
+/* 즉, .fruits에서 첫번째 요소가 span이라 span에 적용됨 */
+
+/* last-child (형제 요소 마지막 요소로 있으면 적용됨) */
+.fruits h3:last-child {
+  text-decoration: line-through;
+}
+.fruits p:last-child {
+  color: green;
+}
+/* 즉, .fruits에서 마지막 요소가 h3라서 h3에 적용됨 */
+
+/* :nth-child(n)  n번째 요소로 있으면 적용됨.(2n은 짝수번째들, 2n+1은 홀수번째들)*/
+.fruits span:nth-child(2) {
+  color: red;
+}
+
+/* 부정요소 *:not() 하위 요소들 중에 ()안에 있는 걸 제외하고 선택*/
+.fruits *:not(span) {
+  background-color: aqua;
+}
