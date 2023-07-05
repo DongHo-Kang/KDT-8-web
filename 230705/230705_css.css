@@ -66,3 +66,19 @@ ul .orange {
 .orange ~ li {
   color: green;
 }
+
+/* hover : 마우스 커서를 올렸을 때 */
+a:hover {
+  color: red;
+}
+
+/* active: 마우스를 클릭하고 있는 동안 */
+a:active {
+  color: white;
+  background-color: black;
+}
+
+/* focus : 포커스가 되어 있을 때 */
+input:focus {
+  background-color: lightgray;
+}

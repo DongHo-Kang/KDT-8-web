@@ -19,6 +19,6 @@ ul > .lion {
   background-color: skyblue;
 }
 
-.lion ~ li {
+li.lion ~ li {
   background-color: orange;
 }
