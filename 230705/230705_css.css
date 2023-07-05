@@ -1,0 +1,68 @@
+/* css에서 링크 방식을 사용하는 방법  */
+/* div {
+  width: 200px;
+  height: 200px;
+  border: 1px solid black;
+  background-color: lightgray;
+} */
+/* 전체 선택자 * */
+/* * {
+  color: red;
+} */
+
+/* 태그 선택자 */
+/* li {
+  color: red;
+} */
+
+/* 클래스 선택자 */
+/* .orange {
+  color: orange;
+} */
+
+/* 아이디 선택자 (아이디 선택자가 클래스 선택자보다 우선순위 높음)*/
+#orange {
+  color: blue;
+}
+
+/* div {
+  background-color: gray;
+  color: white;
+} */
+h1 {
+  color: white;
+}
+
+/* span {
+  background-color: red;
+} */
+#first {
+  background-color: blue;
+}
+.second {
+  background-color: green;
+}
+
+/* 일치 선택자 */
+span.orange {
+  color: red;
+}
+
+/* 자식 선택자 */
+ul > .orange {
+  color: blue;
+}
+/* 하위 선택자 */
+ul .orange {
+  font-weight: bold;
+}
+
+/* 인접 형제 선택자 (바로 다음 요소에만 적용됨)*/
+.orange + li {
+  font-size: 30px;
+}
+
+/* 일반 형제 선택자(뒤에 오는 모든 요소에 적용됨) */
+.orange ~ li {
+  color: green;
+}

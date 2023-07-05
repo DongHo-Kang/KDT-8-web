@@ -8,12 +8,12 @@
     <title>Document</title>
     <style>
       /* 내장 style로 모든 p태그에 적용됨 */
-      p {
+      /* p {
         font-size: 20px;
         text-align: center;
         margin: 0px;
         line-height: 200px;
-      }
+      } */
     </style>
   </head>
   <body>
@@ -28,6 +28,8 @@
       <p>3</p>
     </div>
     <br />
+
+    <!-- 실습 css 적용하기 -->
     <div
       style="background-color: black; width: 100px; height: 50px; border: 0px"
     >
@@ -59,5 +61,36 @@
     <div
       style="background-color: purple; width: 350px; height: 50px; border: 0px"
     ></div>
+
+    <!-- CSS 선택자 -->
+    <div>
+      <ul>
+        <li>사과</li>
+        <li>딸기</li>
+        <li id="orange" class="orange">오렌지1</li>
+        <li>망고</li>
+        <li>포도</li>
+        <p><span class="orange">오렌지2</span></p>
+      </ul>
+      <div>당근</div>
+      <p>토마토</p>
+      <span class="orange">오렌지</span>
+      <p>파인애플</p>
+    </div>
+
+    <br />
+    <!-- 실습 기본 선택자 연습하기 -->
+    <div>
+      <h1>기본 선택자 연습해보기</h1>
+      <p>기본 선택자 연습을 해보아요!</p>
+      <span>안녕하세요</span>
+      <ol>
+        <li id="first">1</li>
+        <li class="second">2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+      </ol>
+    </div>
   </body>
 </html>
