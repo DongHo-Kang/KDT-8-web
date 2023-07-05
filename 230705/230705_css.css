@@ -110,3 +110,12 @@ input:focus {
 .fruits *:not(span) {
   background-color: aqua;
 }
+
+/* 가상요소 선택 before (내부 앞에 내용 삽입) */
+.fruits::before {
+  content: "과일 목록 시작";
+}
+/* 가상요소 선택 after (내부 뒤에 내용 삽입) */
+.fruits::after {
+  content: "과일 목록 끝";
+}
