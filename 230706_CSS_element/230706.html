@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fasthand&display=swap"
+      rel="stylesheet"
+    />
+    ">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      @font-face {
+        font-family: "TTWanjudaedunsancheB";
+        src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-2@1.0/TTWanjudaedunsancheB.woff2")
+          format("woff2");
+        font-weight: 700;
+        font-style: normal;
+      }
+      div {
+        width: 200px;
+        height: 200px;
+        background-color: beige;
+      }
+      div p {
+        font-weight: bold;
+        font-size: 10px;
+        color: red;
+        line-height: 200px;
+        text-align: center;
+        text-decoration: underline;
+      }
+      /* 구글 폰트 -> 폰트 선택 후 ->remove Regular 400 클릭 
+      -> <link> 복사 후 head파일안에 링크 넣기 -> 
+      CSS rules to specify families 복사 후 스타일 태그 안에 넣기  */
+      .google {
+        font-family: "Fasthand", cursive;
+        color: #1818dd;
+      }
+      /* 눈누 폰트 -> 웹폰트로 사용 복사 -> 
+      스타일태그안에 붙여넣기 -> 
+      클래스 스타일에 font-family복붙하기 */
+      .noon {
+        font-family: "TTWanjudaedunsancheB";
+      }
+      a {
+        text-decoration: none;
+      }
+      span {
+        display: inline-block;
+        width: 100px;
+        height: 100px;
+        background-color: lightblue;
+      }
+      h1 {
+        background-color: yellow;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <p>p 태그입니다.</p>
+    </div>
+    <p class="google">
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sit
+      necessitatibus sunt nihil sequi obcaecati blanditiis, explicabo quo
+      voluptatem, quam tempore sint eius id, sed adipisci eaque at rem aperiam
+      cumque.
+    </p>
+    <p class="noon">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum, eius
+      ratione. Rerum magnam qui molestias impedit culpa hic quia et eveniet
+      pariatur! Et delectus praesentium doloremque quis iure vero quidem?
+    </p>
+    <a href="https://www.naver.com">naver</a>
+    <span>span</span>
+    <span>span</span>
+    <h1>h1</h1>
+    <h1>h1</h1>
+    <!-- margin 콘텐츠와 다른 요소와의 여백을 의미-->
+    <div
+      style="
+        width: 200px;
+        height: 200;
+        background-color: red;
+        margin: 10px 20px;
+      "
+    ></div>
+    <!-- padding 콘텐츠와 테두리 사이의 여백을 의미 -->
+    <button style="padding: 10px">버튼</button>
+
+    <!-- width, height 요소의 가로,세로 너비 지정 (vw인 경우 스크롤바의 너비도 포함한다.)(max, min 창의 크기가 변할때 요소의 최대, 최소 지정) -->
+    <div style="width: 30vw; max-width: 50px blue"></div>
+
+    <!-- calc() 사용자가 원하는 크기 값을 계산하여 적용 실시간으로 적용됨-->
+    <div
+      style="
+        width: calc(100vw - 200px);
+        height: 100vw;
+        background-color: orange;
+      "
+    ></div>
+  </body>
+</html>
