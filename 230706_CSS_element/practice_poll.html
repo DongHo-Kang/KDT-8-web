@@ -9,6 +9,9 @@
         border: 5px solid;
         border-radius: 0 0 50% 50%;
       }
+      textarea:focus {
+        background-color: gray;
+      }
       body {
         background-color: aqua;
       }
@@ -20,27 +23,54 @@
         background-color: red;
         color: black;
       }
+      .age {
+        margin-left: 210px;
+        font-size: larger;
+        font-weight: bold;
+      }
+      p {
+        margin-left: 100px;
+        font-size: larger;
+        font-weight: bold;
+      }
+      .ages {
+        margin-left: 10px;
+      }
+      .class {
+        margin-left: 70px;
+      }
+      input:focus {
+        background-color: red;
+      }
     </style>
   </head>
   <body>
-    <h1>설문조사</h1>
+    <span style="text-align: center">
+      <h1>설문조사</h1>
+    </span>
     <br />
     이름<input type="text" /> 이메일<input
+      class="email"
       type="text"
       value="love@example.com"
     />
-    <p>나이</p>
-    <input type="radio" name="ages" value="10" />10대
-    <input type="radio" name="ages" value="20" />20대
-    <input type="radio" name="ages" value="30" />30대
-    <input type="radio" name="ages" value="40" />40대
-    <input type="radio" name="ages" value="50" />50대
-    <input type="radio" name="ages" value="60" />60대 이상
+    <p class="age">나이</p>
+    <input type="radio" name="ages" value="10" class="ages" />10대
+    <input type="radio" name="ages" value="20" class="ages" checked />20대
+    <input type="radio" name="ages" value="30" class="ages" />30대
+    <input type="radio" name="ages" value="40" class="ages" />40대
+    <input type="radio" name="ages" value="50" class="ages" />50대
+    <input type="radio" name="ages" value="60" class="ages" />60대 이상
     <br />
     <p>원하는 강의(복수응답가능합니다.)</p>
-    <input type="checkbox" name="class" value="html" />html
-    <input type="checkbox" name="class" value="javascript" />javascript
-    <input type="checkbox" name="class" id="css" />css
+    <input type="checkbox" name="class" value="html" class="class" />html
+    <input
+      type="checkbox"
+      name="class"
+      value="javascript"
+      class="class"
+    />javascript
+    <input type="checkbox" name="class" value="css" class="class" />css
     <br />
     <textarea
       cols="60"
