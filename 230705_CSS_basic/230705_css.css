@@ -6,36 +6,36 @@
   background-color: lightgray;
 } */
 /* 전체 선택자 * */
-/* * {
+* {
   color: red;
-} */
+}
 
 /* 태그 선택자 */
-/* li {
+li {
   color: red;
-} */
+}
 
 /* 클래스 선택자 */
-/* .orange {
+.orange {
   color: orange;
-} */
+}
 
 /* 아이디 선택자 (아이디 선택자가 클래스 선택자보다 우선순위 높음)*/
 #orange {
   color: blue;
 }
 
-/* div {
+div {
   background-color: gray;
   color: white;
-} */
+}
 h1 {
   color: white;
 }
 
-/* span {
+span {
   background-color: red;
-} */
+}
 #first {
   background-color: blue;
 }
