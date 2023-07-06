@@ -8,7 +8,24 @@
       href="https://fonts.googleapis.com/css2?family=Fasthand&display=swap"
       rel="stylesheet"
     />
+    "> <link rel="stylesheet" href="
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/fontawesome.min.css"
+      integrity="sha512-SgaqKKxJDQ/tAUAAXzvxZz33rmn7leYDYfBP+YoMRSENhf3zJyx3SBASt/OfeQwBHA1nxMis7mM3EV/oYT6Fdw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    "> <link rel="stylesheet" href="
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/solid.min.css"
+      integrity="sha512-yDUXOUWwbHH4ggxueDnC5vJv4tmfySpVdIcN1LksGZi8W8EVZv4uKGrQc0pVf66zS7LDhFJM7Zdeow1sw1/8Jw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     ">
+
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
@@ -33,15 +50,15 @@
         text-align: center;
         text-decoration: underline;
       }
-      /* 구글 폰트 -> 폰트 선택 후 ->remove Regular 400 클릭 
-      -> <link> 복사 후 head파일안에 링크 넣기 -> 
+      /* 구글 폰트 -> 폰트 선택 후 ->remove Regular 400 클릭
+      -> <link> 복사 후 head파일안에 링크 넣기 ->
       CSS rules to specify families 복사 후 스타일 태그 안에 넣기  */
       .google {
         font-family: "Fasthand", cursive;
         color: #1818dd;
       }
-      /* 눈누 폰트 -> 웹폰트로 사용 복사 -> 
-      스타일태그안에 붙여넣기 -> 
+      /* 눈누 폰트 -> 웹폰트로 사용 복사 ->
+      스타일태그안에 붙여넣기 ->
       클래스 스타일에 font-family복붙하기 */
       .noon {
         font-family: "TTWanjudaedunsancheB";
@@ -63,6 +80,21 @@
       }
       button:hover {
         border: 2px solid red;
+      }
+      .d-none {
+        display: none;
+        background-color: red;
+      }
+      .invisible {
+        visibility: hidden;
+        background-color: orangered;
+      }
+      .opacity-0 {
+        opacity: 0;
+        background-color: tomato;
+      }
+      body {
+        overflow: hidden;
       }
     </style>
   </head>
@@ -119,5 +151,15 @@
     >
       KDT
     </div>
+    <div class="square">original</div>
+    <div class="square d-none">d-none</div>
+    <div class="square invisible">invisible</div>
+    <div class="square opacity-0">opacity-0</div>
+    <div class="square">original</div>
+
+    <div style="overflow: auto; width: 100px; height: 100px; margin: 0">
+      overflowwwwwwwwwwwwwwwwwwwwwwwwwwww
+    </div>
+    <i class="fa-solid fa-arrow-up"></i>
   </body>
 </html>
