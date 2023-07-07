@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .main {
+        height: 100px;
+        background-color: aqua;
+        display: flex;
+      }
+      .item {
+        width: 100px;
+        height: 100px;
+        background-color: red;
+        flex-direction: row;
+        flex-wrap: wrap;
+        font-size: 20px;
+        text-align: center;
+      }
+      .between {
+        justify-content: space-between;
+      }
+      .around {
+        justify-content: space-around;
+      }
+      .evenly {
+        justify-content: space-evenly;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main between">
+      <div class="item between">space-between</div>
+      <div class="item between">space between</div>
+      <div class="item between">space between</div>
+    </div>
+    <br />
+    <div class="main around">
+      <div class="item around">space-around</div>
+      <div class="item around">space around</div>
+      <div class="item around">space around</div>
+    </div>
+    <br />
+    <div class="main evenly">
+      <div class="item evenly">space-evenly</div>
+      <div class="item evenly">space evenly</div>
+      <div class="item evenly">space evenly</div>
+    </div>
+  </body>
+</html>
