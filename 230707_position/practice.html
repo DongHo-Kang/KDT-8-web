@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* static(정적으로 고정됨)이 position의 기본 속성 
+      relative는 상대적으로 위치 정하는 것. 
+      absolute는 컨테이너에(스크롤으로 이동하면 안보임.) 기준으로 정해짐.
+      fixed는 (스크롤로 내려도 고정되서 따라옴) 브라우저(뷰포트)에 고정됨*/
+      div {
+        width: 100px;
+        height: 100px;
+      }
+      .box {
+        width: 500px;
+        height: 500px;
+        background-color: bisque;
+        position: relative;
+      }
+      .item1 {
+        background-color: blueviolet;
+        position: relative;
+        left: 50px;
+        top: 30px;
+      }
+      /* absolute는 부모가 relative position일때 부모를 기준으로 잡는다. */
+      .item2 {
+        background-color: yellow;
+        position: absolute;
+        right: 30px;
+        bottom: 100px;
+      }
+      .item3 {
+        background-color: skyblue;
+        position: fixed;
+        top: 100px;
+        right: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <div class="item1"></div>
+      <div class="item2"></div>
+      <div class="item3"></div>
+    </div>
+  </body>
+</html>

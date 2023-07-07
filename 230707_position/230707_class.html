@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* static(정적으로 고정됨)이 position의 기본 속성
+            relative는 상대적으로 위치 정하는 것.
+            absolute는 뷰포인트에(스크롤으로 이동하면 안보임.) 기준으로 정해짐.
+            fixed는(스크롤로 내려도 고정되서 따라옴) 브라우저에 고정됨*/
+      div {
+        width: 100px;
+        height: 100px;
+        position: fixed;
+      }
+      .item1 {
+        background-color: blueviolet;
+      }
+      .item2 {
+        background-color: yellow;
+        left: 30px;
+      }
+      .item3 {
+        background-color: skyblue;
+        top: 30px;
+        right: 30px;
+      }
+      .parent {
+        position: relative;
+      }
+      .circle {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        position: absolute;
+      }
+      .circle1 {
+        background-color: #9afaff;
+        top: 0;
+        left: 200px;
+        z-index: 1;
+      }
+      .circle2 {
+        background-color: #84ff8d;
+        top: 0;
+        left: 150px;
+        z-index: 3;
+      }
+      .circle3 {
+        background-color: #ffeb88;
+        top: 0;
+        left: 100px;
+      }
+      .circle4 {
+        background-color: #ffb680;
+        top: 0;
+        left: 50px;
+      }
+      .circle5 {
+        top: 0;
+        left: 0;
+        background-color: #ff7c7c;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <div class="item1"></div>
+      <div class="item2"></div>
+      <div class="item3"></div>
+    </div>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <div class="parent">
+      <div class="circle circle1"></div>
+      <div class="circle circle2"></div>
+      <div class="circle circle3"></div>
+      <div class="circle circle4"></div>
+      <div class="circle circle5"></div>
+    </div>
+  </body>
+</html>
