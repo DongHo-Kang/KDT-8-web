@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div div {
+        width: 100px;
+        height: 100px;
+      }
+      /* 부모랑 자식이 있을 때 부모한데 flex를 주는 것으로 부모가 마음대로 정렬(flex-direction)시킴 */
+      /* flex-wrap을 사용하여 div를 줄바꿈을 하여 div의 원래 크기를 지킬 수 있다. */
+      /* justify-content display안에 놓은 위치 지정  evenly는 시작점에서 부터 간격을 두어서 다 동일, around는 요소 하나에 똑같은 마진을 준다*/
+      /* align-items는 교차축을 기준으로 설정된다. 줄 바꿈을 하면 각각 한줄로 보고 정렬 */
+      /* align-content는 줄바꿈을 한 후 총 하나(즉,한줄)로 보고 정렬 */
+      .display {
+        display: flex;
+        flex-direction: column-reverse;
+      }
+      .div1 {
+        background-color: red;
+      }
+      .div2 {
+        background-color: orange;
+      }
+      .div3 {
+        background-color: yellow;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="display">
+      <div class="div1"></div>
+      <div class="div2"></div>
+      <div class="div3"></div>
+    </div>
+  </body>
+</html>
