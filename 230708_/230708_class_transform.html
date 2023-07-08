@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div.index {
+        width: 100px;
+        height: 100px;
+        background-color: red;
+      }
+      div.index:hover {
+        /* transform: translate(100px, 100px); */
+        /* transform: translateY(100px); */
+        /* transform: scale(10); */
+        /* transform: scaleX(10); */
+        /* transform: rotate(90deg); */
+        /* transform: rotateX(45deg); */
+        transform: skewY(45deg);
+      }
+      img {
+        width: 100px;
+        height: 100px;
+      }
+      img:hover {
+        /* transform: skew(50deg); */
+        transform: rotatey(180deg);
+        backface-visibility: hidden;
+      }
+      div {
+        width: 100px;
+        height: 100px;
+        background-color: yellow;
+        transition: width 2s ease 0.5s;
+        /* transition-property: width;
+        transition-duration: 2s;
+        transition-timing-function: ease;
+        transition-delay: 0.5s; */
+      }
+      div:hover {
+        width: 300px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="index">index</div>
+    <img src="/dog.jpeg" alt="americano" />
+    <div></div>
+  </body>
+</html>

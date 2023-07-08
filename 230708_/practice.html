@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      img {
+        margin-top: 300px;
+        width: 500px;
+        height: 300px;
+      }
+      .page1 {
+        position: absolute;
+        transform: skewy(30deg);
+        margin-left: 100px;
+        z-index: 3;
+      }
+      .page2 {
+        position: fixed;
+        transform: skewy(30deg);
+        margin-left: 450px;
+        z-index: 2;
+      }
+      .page3 {
+        position: fixed;
+        transform: skewy(30deg);
+        margin-left: 800px;
+      }
+    </style>
+  </head>
+  <body>
+    <img src="/1.jpg" alt="1" class="page1" />
+    <img src="/2.jpg" alt="2" class="page2" />
+    <img src="/3.jpg" alt="3" class="page3" />
+  </body>
+</html>
