@@ -1,0 +1,122 @@
+body {
+  background-color: rgb(255, 78, 78);
+  animation-name: body;
+  animation-duration: 10s;
+  animation-iteration-count: 3;
+}
+.sun {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  top: 500px;
+  left: 500px;
+  opacity: 1;
+  animation-name: sun;
+  animation-duration: 10s;
+  animation-iteration-count: 3;
+}
+.moon {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  top: 500px;
+  left: 300px;
+  animation-name: moon;
+  animation-duration: 10s;
+  animation-iteration-count: 3;
+  opacity: 0;
+}
+.cloud_1 {
+  position: relative;
+  width: 300px;
+  height: 200px;
+  top: 500px;
+  left: 1000px;
+  animation-name: cloud_1;
+  animation-duration: 10s;
+  animation-iteration-count: 3;
+  opacity: 0.5;
+}
+.cloud_2 {
+  position: relative;
+  width: 200px;
+  height: 100px;
+  top: 500px;
+  left: 100px;
+  animation-name: cloud_2;
+  animation-duration: 10s;
+  animation-iteration-count: 3;
+  opacity: 0.5;
+}
+.city {
+  position: relative;
+  top: 500px;
+  left: 500px;
+}
+@keyframes body {
+  0% {
+    background-color: rgb(255, 78, 78);
+  }
+  50% {
+    background-color: rgb(73, 73, 73);
+  }
+  100% {
+    background-color: rgb(255, 78, 78);
+  }
+}
+@keyframes sun {
+  0% {
+    opacity: 1;
+    transform: rotate(200deg);
+  }
+  50% {
+    opacity: 0;
+    transform: rotate(0deg);
+  }
+  100% {
+    opacity: 1;
+    transform: rotate(200deg);
+  }
+}
+@keyframes moon {
+  0% {
+    opacity: 0;
+    transform: rotate(100deg);
+  }
+  50% {
+    opacity: 1;
+    transform: rotate(-100deg);
+  }
+  100% {
+    opacity: 0;
+    transform: rotate(100deg);
+  }
+}
+@keyframes cloud_1 {
+  0% {
+    transform: translatex(0px);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translatex(-500px);
+    opacity: 1;
+  }
+  100% {
+    transform: translatex(0px);
+    opacity: 0.5;
+  }
+}
+@keyframes cloud_2 {
+  0% {
+    transform: translatex(0px);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translatex(500px);
+    opacity: 1;
+  }
+  100% {
+    transform: translatex(0px);
+    opacity: 0.5;
+  }
+}

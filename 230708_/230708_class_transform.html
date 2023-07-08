@@ -28,7 +28,7 @@
         transform: rotatey(180deg);
         backface-visibility: hidden;
       }
-      div {
+      div.transition {
         width: 100px;
         height: 100px;
         background-color: yellow;
@@ -38,14 +38,49 @@
         transition-timing-function: ease;
         transition-delay: 0.5s; */
       }
-      div:hover {
+      div.transition:hover {
         width: 300px;
+      }
+      div.anim {
+        width: 100px;
+        height: 100px;
+        background-color: cyan;
+        position: relative;
+        animation-name: myanim;
+        animation-duration: 2 s;
+        animation-iteration-count: 3;
+        animation-timing-function: ease;
+      }
+      /* 애니메이션 설정 정하기 */
+      /* 어떠한 속성을 주려면 처음부터 모든 속성을 다 넣어야한다.(0도 포함) */
+      @keyframes myanim {
+        0% {
+          left: 0px;
+          top: 0px;
+        }
+        25% {
+          left: 100px;
+          top: 0px;
+        }
+        50% {
+          left: 200px;
+          top: 0px;
+        }
+        75% {
+          left: 100px;
+          top: 0px;
+        }
+        100% {
+          left: 0px;
+          top: 0px;
+        }
       }
     </style>
   </head>
   <body>
     <div class="index">index</div>
     <img src="/dog.jpeg" alt="americano" />
-    <div></div>
+    <div class="transition">transition</div>
+    <div class="anim"></div>
   </body>
 </html>
