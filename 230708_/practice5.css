@@ -2,7 +2,7 @@ body {
   background-color: rgb(255, 78, 78);
   animation-name: body;
   animation-duration: 10s;
-  animation-iteration-count: 3;
+  animation-iteration-count: infinite;
 }
 .sun {
   position: relative;
@@ -13,7 +13,7 @@ body {
   opacity: 1;
   animation-name: sun;
   animation-duration: 10s;
-  animation-iteration-count: 3;
+  animation-iteration-count: infinite;
 }
 .moon {
   position: relative;
@@ -23,7 +23,7 @@ body {
   left: 300px;
   animation-name: moon;
   animation-duration: 10s;
-  animation-iteration-count: 3;
+  animation-iteration-count: infinite;
   opacity: 0;
 }
 .cloud_1 {
@@ -34,7 +34,7 @@ body {
   left: 1000px;
   animation-name: cloud_1;
   animation-duration: 10s;
-  animation-iteration-count: 3;
+  animation-iteration-count: infinite;
   opacity: 0.5;
 }
 .cloud_2 {
@@ -45,7 +45,7 @@ body {
   left: 100px;
   animation-name: cloud_2;
   animation-duration: 10s;
-  animation-iteration-count: 3;
+  animation-iteration-count: infinite;
   opacity: 0.5;
 }
 .city {
