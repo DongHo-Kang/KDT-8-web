@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      /*
+        if(조건 1){
+            //조건 1이 참을 때 실행하는 코드
+        } else if(조건 2){
+            //조건 2이 참일 때 실행하는 코드
+        }else{
+            //위의 모든 조건들이 부합하지 않을때 실행할 코드
+        } */
+
+      if (3 > 5) {
+        console.log("3>5");
+      }
+      if (3 < 5) {
+        console.log("3<5");
+      }
+
+      let a = "김";
+      if (a == "이") {
+        console.log("이");
+      } else if (a == "김") {
+        console.log("김");
+      } else {
+        console.log("아무것도 아니다.");
+      }
+
+      /*
+      switch(변수){
+        case 값:
+            ~~
+        break;
+      }*/
+      let test = "a";
+      switch (test) {
+        case "a":
+          console.log("a입니다.");
+          break;
+        case "b":
+          console.log("b입니다.");
+          break;
+        //기본값(else와 같음)
+        default:
+          console.log("아무것도 아니다.");
+          break;
+      }
+
+      if (a > 5) {
+        console.log("5보다 크다.");
+      } else {
+        console.log("5보다 작다.");
+      }
+      /* 삼항연산자: 조건 ? 참일때 : 거짓일 때 */
+      a > 5 ? console.log("5보다 크다") : console.log("5보다 작다");
+    </script>
+  </head>
+  <body></body>
+</html>

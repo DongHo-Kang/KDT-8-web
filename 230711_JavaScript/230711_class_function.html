@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      functionName();
+      function functionName() {
+        //함수 선언문
+        console.log("안녕하세요");
+      } //functionName 이라는 함수를 선언한 것;
+      functionName();
+
+      //함수 표현식
+      let functionName2 = function () {
+        console.log("안녕하세요2");
+      }; //익명 함수
+      functionName2();
+
+      //화살표 함수
+      let functionName3 = () => {
+        console.log("안녕하세요2");
+      };
+      functionName3();
+
+      function hello(name, age) {
+        console.log(name + "님 안녕하세요.");
+        console.log(age + "세");
+
+        return age + 10; //리턴은 반환값을 한번만 받음
+      }
+      let result = hello("홍길동", 15);
+      console.log("result : ", result);
+      let a = 1;
+      hello(a);
+    </script>
+  </head>
+  <body></body>
+</html>

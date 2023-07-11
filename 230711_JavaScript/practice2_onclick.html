@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      function add(number, number) {
+        let a = prompt("첫번째 숫자를 입력해주세요.");
+        let b = prompt("두번째 숫자를 입력해주세요.");
+        console.log(Number(a) + Number(b));
+      }
+      function sub(number, number) {
+        let a = prompt("첫번째 숫자를 입력해주세요.");
+        let b = prompt("두번째 숫자를 입력해주세요.");
+        console.log(Number(a) - Number(b));
+      }
+      function divide(number, number) {
+        let a = prompt("첫번째 숫자를 입력해주세요.");
+        let b = prompt("두번째 숫자를 입력해주세요.");
+        console.log(Number(a) / Number(b));
+      }
+      function mul(number, number) {
+        let a = prompt("첫번째 숫자를 입력해주세요.");
+        let b = prompt("두번째 숫자를 입력해주세요.");
+        console.log(Number(a) * Number(b));
+      }
+    </script>
+  </head>
+  <body>
+    <button onclick="add()">더하기</button>
+    <button onclick="sub()">빼기</button>
+    <button onclick="divide()">나누기</button>
+    <button onclick="mul()">곱하기</button>
+  </body>
+</html>
+
+<!--  //전역 변수와 지역변수
+let a = prompt("첫번째 숫자");
+let b = prompt("두번째 숫자");
+
+ function add(){
+     let result = a + b; //a와 b는 전역 변수, result는 지역변수
+ } -->
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      // 전역변수랑 지역변수
+      let a = prompt("첫번째 숫자");
+      a = Number(a);
+      let b = prompt("두번째 숫자");
+      b = Number(b);
+
+      function add() {
+        let result = a + b;
+        alert(result);
+      }
+      function sub() {
+        alert(a - b);
+      }
+    </script>
+  </head>
+  <body>
+    <button onclick="add()">add</button>
+    <button onclick="sub()">sub</button>
+    <button onclick="div()">div</button>
+    <button onclick="mul()">mul</button>
+  </body>
+</html> -->

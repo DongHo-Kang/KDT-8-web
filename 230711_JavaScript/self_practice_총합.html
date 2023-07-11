@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      let n = 0;
+      let sumTwo = 0;
+      let sumThree = 0;
+      let sumSix = 0;
+      let sum = 0;
+      for (n = 1; n < 100; n++) {
+        if (n % 2 == 0) {
+          sumTwo = sumTwo + n;
+        }
+        if (n % 3 == 0) {
+          sumThree = sumThree + n;
+        }
+        if (n % 2 == 0 && n % 3 == 0) {
+          sumSix = sumSix + n;
+        }
+      }
+      console.log("2의 배수의 총합" + sumTwo);
+      console.log("3의 배수의 총합" + sumThree);
+      sum = sumTwo + sumThree - sumSix;
+      console.log("답은", sum);
+
+      let sum1 = 0;
+      for (let i = 0; i < 100; i++) {
+        if (i % 2 == 0 || i % 3 == 0) sum1 += i;
+      }
+      console.log("sum: ", sum1);
+    </script>
+  </head>
+  <body></body>
+</html>

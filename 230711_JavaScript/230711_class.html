@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      const msg = "안녕하세요";
+      const name = "길동";
+
+      //안녕하세요 길동님
+      console.log(msg);
+      console.log(name);
+      console.log("님");
+
+      console.log(msg + name + "님");
+      //+ : 변수를 문자로 변환 후 출력
+
+      console.log(msg, name, "님");
+
+      console.log(`$(msg) $(name)님`);
+      //백틱: (`) 문자를 쓰다라가 변수를 쓸 수 있다.
+
+      console.log("------------------------");
+      let colors = ["red", "orage", "yellow", "green"];
+      console.log(colors);
+      //색상 : Array
+      console.log("색상: " + colors);
+      //문자로 변환 후 출력됨
+      console.log("색상: ", colors);
+      //변수 자체가 다 출력됨
+
+      let list = [1, 2, 3, 4, 5, 6];
+      console.log(list[1]);
+      console.log(list.length);
+
+      list.push(7); //제일 뒤에 값을 넣음
+      console.log(list);
+
+      list.pop(); //제일 뒤에 값을 지움
+      console.log(list);
+
+      //   let mathScore = prompt("수학 점수를 입력 하세요");
+      //   let engScore = prompt("영어 점수를 입력 하세요");
+      //   //prompt는 기본적으로 문자로 받는다.
+
+      //   let avg = (mathScore + engScore) / 2;
+      //   //100+50을 150으로 못하고 10050으로 받는다.
+
+      //   console.log(avg);
+
+      console.log("형변환");
+      let num = 456;
+      console.log(typeof num); //number
+      let num1 = String(num);
+      console.log(typeof num1); //string
+      let num2 = num.toString;
+      console.log(typeof num2); //string
+
+      //String() toString()의 차이
+      //String()은 문자로 변경해주면서 모든곳에 사용 가능 / toString()은 Null, undefined에서는 못 쓴다.(즉, 존재하는 곳에서만 사용 가능)
+
+      console.log(1 == "1");
+      console.log(1 === "1");
+    </script>
+  </head>
+  <body></body>
+</html>

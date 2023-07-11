@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      let age = prompt("나이를 입력하세요.");
+      let gender = prompt("남, 여로 성별을 입력하세요.");
+      //age = Number(age);
+
+      if (0 <= Number(age) && Number(age) <= 7 && gender == "남") {
+        alert("남자 유아");
+      } else if (0 <= Number(age) && Number(age) <= 7 && gender == "여") {
+        alert("여자 유아");
+      } else if (8 <= Number(age) && Number(age) <= 13 && gender == "남") {
+        alert("남자 초등학생");
+      } else if (8 <= Number(age) && Number(age) <= 13 && gender == "여") {
+        alert("여자 초등학생");
+      } else if (14 <= Number(age) && Number(age) <= 16 && gender == "남") {
+        alert("남자 중학생");
+      } else if (14 <= Number(age) && Number(age) <= 16 && gender == "여") {
+        alert("여자 중학생");
+      } else if (17 <= Number(age) && Number(age) <= 19 && gender == "남") {
+        alert("남자 고등학생");
+      } else if (17 <= Number(age) && Number(age) <= 19 && gender == "여") {
+        alert("여자 고등학생");
+      } else if (20 <= Number(age) && gender == "남") {
+        alert("성인 남자");
+      } else {
+        alert("성인 여자");
+        15;
+      }
+    </script>
+  </head>
+  <body></body>
+</html>
