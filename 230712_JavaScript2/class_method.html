@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      //문자열 관련 메소드
+      let str = "Happy day";
+
+      //1. 문자열의 길이 확인
+      console.log("length:", str.length); //,는 파라미터로 받고 + 는 문자열로 받는다.
+
+      //2. 문자열을 모두 대문자, 소문자로 변환
+      console.log("toUppserCase:", str.toUpperCase());
+      console.log("toLowerCase:", str.toLocaleLowerCase());
+
+      //3. Index를 가져오기
+      console.log("index:", str.indexOf("y")); //제일 처음에 나오는 인덱스 가져옴.
+      console.log("index:", str.lastIndexOf("y")); //제일 마지막에 나오는 인덱스 가져옴.
+
+      //4. 문자열 자르기(첫번째 파라미터는 필수, 두번째는 선택)
+      console.log("slice:", str.slice(0, 4)); //4번째 인덱스 바로 전까지 출력(Happ)
+
+      //5. 바꾸기(replace)
+      console.log("replace p -> a:", str.replace("p", "a")); //제일 먼저 찾아지는 문자만 변경된다.
+      console.log("replace a -> k:", str.replaceAll("a", "k")); //찾아지는 모든 요소를 변경함.
+
+      //6. 반복(repeat)
+      console.log("repeat: ", str.repeat(10));
+
+      //7. split: 문자열을 내가 원하는 부분에서 자르고, 그걸 리스트로 만들어줌
+      console.log("split:", str.split(" "));
+      console.log("split:", str.split("a")); //기준이 되는 값이 사라진다.
+      console.log("split:", str.split()); //한글자씩 잘림.
+
+      //8. trim(): 좌우 공백 제거
+      console.log("trim 전:", str);
+      console.log("trim 후:", str.trim());
+    </script>
+  </head>
+  <body></body>
+</html>

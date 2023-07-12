@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      //array를 반복문 돌린다.
+      //for(초기식; 조건식; 증감식) {명령}
+      //초기식 -> 조건식 확인 -> 명령 -> 증감 -> 조건확인 -> 명령 -> 증감...
+      let fruits = ["apple", "banana", "melon", "cherry", "grape"];
+      console.log("fruits: ", fruits);
+      console.log("apple: ", fruits[0]); //특정한 값을 가져올 때
+
+      //기본 for문
+      for (let i = 0; i < fruits.length; i++) {
+        console.log("i:", i);
+        console.log("fruits[i]:", fruits[i]);
+      }
+
+      //for of
+      //for (변수 of 배열): 배열에 있는 요소를 하나씩 변수로 가져온다.
+      for (let f of fruits) {
+        console.log("for-of:", f);
+      }
+
+      //forEach(함수)
+      //배열.forEach((변수, 인덱스, 배열)=>{});
+      //변수에는 배열에 들어오는 요소가 하나씩 들어온다.
+      //인덱스에는 변수가 하나씩 들어올 때 그 변수의 인덱스
+      //배열에는 현재 내가 돌고 있는 배열
+      fruits.forEach((f, index, arr) => {
+        console.log("------------------");
+        console.log("f: ", f);
+        console.log("index: ", index);
+        console.log("arr: ", arr);
+        console.log("------------------");
+      });
+
+      //콜백함수: 다른 함수에 parameter로 보내지는 함수
+      //그 함수한데 원하는 작업하고, 콜백함수를 실행시켜라
+
+      let function2 = () => {
+        console.log("function2가 실행되었다.");
+      };
+      fruits.forEach(function2);
+      //function1이 함수라고 할때, 콜백함수를 보낸다.
+      //forEach
+    </script>
+  </head>
+  <body></body>
+</html>

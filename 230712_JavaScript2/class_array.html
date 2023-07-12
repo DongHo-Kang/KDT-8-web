@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      //배열 관련 메소드
+      //push(), pop()
+      let days = ["M", "T", "W", "T", "F", "S", "S"];
+
+      console.log("days:", days);
+      //0. 길이
+      console.log("length:", days.length);
+
+      //1.마지막 요소 추가/삭제
+      //push(): 마지막 요소 추가, 마지막 위치에 원하는 만큼 요소를 추가하고 추가된 이후의 리스트 길이를 반환해주는 함수
+      let pushResult = days.push("z", "a");
+      console.log("push:", days);
+      console.log("pushResult:", pushResult);
+
+      //pop(): 마지막 요소 삭제, 마지막 위치의 요소를 추출해 반환해준다.(추출하기 때문에 리스트에서는 삭제)
+      let popResult = days.pop(); //: string | undefined -> 문자열 혹은 undefined를 반환하겠다.
+      console.log("pop:", days);
+      console.log("popResult: ", popResult);
+
+      //2. 맨 앞 요소 추가/삭제
+      //unshift(): 맨 앞 요소 추가, 맨 앞 위치에 원하는 만큼 요소를 추가하고 추가된 이후의 리스트 길이를 반환해주는 함수
+      let unshiftResult = days.unshift("r", "e");
+      console.log("unshift: ", days);
+      console.log("unshiftResult: ", unshiftResult);
+
+      //shift(): 맨 앞 요소 삭제, 맨 앞 위치의 요소를 추출해 반환해준다.(추출하기 때문에 리스트에서는 삭제)
+      let shiftResult = days.shift();
+      console.log("shift:", days);
+      console.log("shiftResult:", shiftResult);
+
+      //3. 인덱스 가져오기
+      //indexOf(찾을 요소, [검색을 시작할 인덱스])  / [검색을 시작할 인덱스] <- 안써도 무방(기본값: 0)
+      console.log("indexOf T: ", days.indexOf("T"));
+      console.log("indexOf T2: ", days.indexOf("T", 3)); // 3번째 인덱스부터 찾기 시작
+
+      //4. includes(): 포함 유무(Boolean값)
+      //includes(찾을 요소, [검색을 시작할 인덱스])
+      //includes(): 요소를 찾고, 그에 대한 결과를 boolean타입으로 반환.
+      console.log("includes S:", days.includes("S"));
+      console.log("includes B:", days.includes("B"));
+
+      //5. reverse() : 반전시키는 함수
+      console.log("reverse: ", days.reverse());
+
+      //6. join(): 배열을 연결해서 문자열로 가져온다.
+      //join([연결고리])  /[연결고리] <- 기본값:콤마
+      console.log("join:", days.join());
+      console.log("join &: ", days.join("&"));
+      console.log("join:''", days.join(""));
+
+      console.log("------------------------------------------");
+
+      let str = "Holiday";
+      //문자열 뒤집기: split으로 분할하고 -> reverse로 뒤집고 -> join으로 연결.
+      let a = str.split("");
+      console.log("a: ", a);
+      let b = a.reverse();
+      console.log("b: ", b);
+      let c = b.join("");
+      console.log("c: ", c);
+
+      //너무 귀찮으니 한번에 하는 방법(간단히 코드 쓰기)(한번에 쓸 수 있다.)
+      //메소드 체이닝
+      console.log("total: ", str.split("").reverse().join(""));
+
+      //shallow copy, deep copy
+      let d = 1;
+      let e = a;
+    </script>
+  </head>
+  <body></body>
+</html>
