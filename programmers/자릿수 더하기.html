@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      let n = prompt("숫자를 입력하시오.");
+      function solution(n) {
+        var answer = 0;
+        let arr = String(n).split("");
+        arr.forEach((a) => {
+          answer += parseInt(a);
+        });
+        return answer;
+      }
+      console.log(solution(n));
+    </script>
+  </head>
+  <body></body>
+</html>

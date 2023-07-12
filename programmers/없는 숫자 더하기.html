@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      let n = prompt("0~9까지의 숫자 중 원하는 순서대로 한번씩 입력하시오.");
+      let numbers = n.split("");
+      console.log(numbers);
+
+      function solution(numbers) {
+        var answer = 0;
+        for (let i = 1; i <= 9; i++) {
+          if (numbers.includes(i.toString())) {
+            //toString을 통해 배열을 문자로 변환 설정
+          } else {
+            answer += i;
+          }
+        }
+
+        return answer;
+      }
+      console.log(solution(numbers));
+    </script>
+  </head>
+  <body></body>
+</html>

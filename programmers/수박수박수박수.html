@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      let n = prompt("숫자를 입력하세요.");
+      function solution(n) {
+        var answer = "";
+        let a = ["수", "박"];
+
+        for (let i = 0; i < n; i++) {
+          answer += a[i % 2];
+        }
+        return answer;
+      }
+      console.log(solution(n)); //'answer'는 'solution(n)' 함수 내부의 지역 변수임으로 함수 외부로 접근 할 수 없다. 그래서 'solution(n)'함수의 결과를 출력해야 한다.
+    </script>
+  </head>
+  <body></body>
+</html>
