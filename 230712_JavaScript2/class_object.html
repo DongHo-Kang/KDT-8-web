@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <script>
+      //표준객체: JS에 기본적으로 내장되어 있는 친구들
+      //String, Number, Array
+
+      //Date
+      //Date: JS에서 시간과 날짜에 대한 정보를 얻기 위해 사용되는 객체
+      //초기화(new)를 시켜야 사용이 가능
+      //new Date() : 현재 시간
+      let date = new Date();
+      //new Date(년, 월, 일, 시, 분, 초, 밀리초) : 내가 parameter로 넣은 특정 시간을 가져온다.
+      let date1 = new Date(2023, 0, 11, 13);
+      //month = ['']
+      //초기화할 때 Date에 값을 넣으면(숫자를 넣으면) 어떤 시간이 나오냐? -> 1970년 1월1일 0시부터 밀리초만큼 지난 날짜
+      console.log(Date.now()); //기준시간으로부터 지금까지 지난 밀리초
+
+      //Date 객체
+      console.log(date.getFullYear()); //getFullYear(): 년도
+      console.log(date.getMonth()); // 월
+      console.log(date.getDate()); //getDate(): 초기화한 시간의 일
+      console.log(date.getDay()); //일요일(0), 월요일(1), 화요일(2)...토요일(6)
+      console.log(date.getTime()); //내가 기준으로 잡은 시간이 기준시간으로부터 얼마나 지났는지를 밀리초
+      console.log(date.getHours()); //현재 시간 (시)
+      console.log(date.getMinutes()); //현재 시간 (분)
+      console.log(date.getMilliseconds()); //현재 시간 (초)
+
+      //yyyy-mm-dd
+      let year = date.getFullYear();
+      let month = date.getMonth();
+      let day = date.getDate();
+
+      console.log("${year}-${month}-${day}");
+
+      //Math: 수학적인 계산을 하기 위해 사용.
+      console.log(Math.PI);
+      console.log(Math.E);
+      console.log(Math.SQRT2);
+    </script>
+  </head>
+  <body></body>
+</html>
