@@ -39,13 +39,21 @@
 
       //콜백함수: 다른 함수에 parameter로 보내지는 함수
       //그 함수한데 원하는 작업하고, 콜백함수를 실행시켜라
+      console.log("-----------");
+      //callbackFn : (value: string, index: number, array: string[])
+      //forEach에서 callback함수를 받는데, 그 때 받는 함수는 3개의 parameter를 가질 수 있다.
+      //3개의 parameter는 각각 value, index, array
+      //value: 반복을 돌 때 그 값
+      //index: 배열에서 value의 index
+      //array: 현재 돌고 있는 그 배열의 원본
 
-      let function2 = () => {
+      let function2 = (a, b, c) => {
+        console.log("a: ", a);
         console.log("function2가 실행되었다.");
       };
       fruits.forEach(function2);
       //function1이 함수라고 할때, 콜백함수를 보낸다.
-      //forEach
+      //forEach 함수가 반복을 돌고, function1을 실행시켜라.
     </script>
   </head>
   <body></body>
