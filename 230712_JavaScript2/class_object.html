@@ -22,7 +22,7 @@
 
       //Date 객체
       console.log(date.getFullYear()); //getFullYear(): 년도
-      console.log(date.getMonth()); // 월
+      console.log(date.getMonth() + 1); // 월(0부터 시작되기에 +1을 해줘야 현재 월이 나옴)
       console.log(date.getDate()); //getDate(): 초기화한 시간의 일
       console.log(date.getDay()); //일요일(0), 월요일(1), 화요일(2)...토요일(6)
       console.log(date.getTime()); //내가 기준으로 잡은 시간이 기준시간으로부터 얼마나 지났는지를 밀리초
@@ -32,7 +32,7 @@
 
       //yyyy-mm-dd
       let year = date.getFullYear();
-      let month = date.getMonth();
+      let month = date.getMonth() + 1;
       let day = date.getDate();
 
       console.log(`${year}-${month}-${day}`);
