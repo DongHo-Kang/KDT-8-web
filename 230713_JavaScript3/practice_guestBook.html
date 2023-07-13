@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      th {
+        border: 1px solid black;
+      }
+      table {
+        border: 1px solid black;
+      }
+      tr {
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <p>방명록 입니다.</p>
+    작성자: <input type="text" id="writer" /><br />
+    내용: <input type="text" id="content" />
+    <br />
+    <button onclick="doAction()">작성</button>
+
+    <br />
+    <div>
+      <form>
+        <table id="guestBook" ,border="1 solid black">
+          <thead>
+            <tr>
+              <th>번호</th>
+              <th>작성자</th>
+              <th>내용</th>
+              <th>작성일</th>
+            </tr>
+          </thead>
+        </table>
+      </form>
+    </div>
+    <script>
+      function doAction() {
+        let writer = document.getElementById("writer").value;
+        let content = document.getElementById("content").value;
+        let date = new Date();
+
+        let newguest = document.getElementById("guestBook");
+
+        let newRow = document.createElement("tr");
+        let newNumber = document.createElement("td");
+        let newWriter = document.createElement("td");
+        let newContent = document.createElement("td");
+        let newDay = document.createElement("td");
+
+        newNumber.textContent = newguest.rows.length;
+        newWriter.textContent = writer;
+        newContent.textContent = content;
+        newDay.textContent = date.toLocaleString();
+
+        newRow.append(newNumber);
+        newRow.append(newWriter);
+        newRow.append(newContent);
+        newRow.append(newDay);
+
+        newguest.append(newRow);
+      }
+    </script>
+  </body>
+</html>

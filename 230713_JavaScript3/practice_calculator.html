@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>계산기</p>
+    값1: <input type="text" id="value1" /> <br />값2:
+    <input type="text" id="value2" /> <br />연산자:
+    <input type="text" id="cal" /><br />
+    결과: <input type="text" id="result" />
+    <br />
+    <button class="calculate" onclick="doAction()">계산하기</button>
+    <button id="reset" onclick="doReset()">초기화</button>
+
+    <style>
+      #value1 {
+        background-color: rgb(255, 149, 149);
+      }
+      #value2 {
+        background-color: rgb(157, 157, 255);
+      }
+    </style>
+
+    <script>
+      function doAction() {
+        let value1 = parseInt(document.getElementById("value1").value);
+        let value2 = parseInt(document.getElementById("value2").value);
+        let cal = document.getElementById("cal").value;
+        let result = 0;
+
+        if (cal === "+") {
+          result = value1 + value2;
+        } else if (cal === "-") {
+          result = value1 - value2;
+        } else if (cal === "*") {
+          result = value1 * value2;
+        } else if (cal === "/") {
+          result = value1 / value2;
+        } else {
+          alert("사칙연산 기호를 입력해주세요.");
+        }
+
+        document.getElementById("result").value = result;
+      }
+
+      function doReset() {
+        document.getElementById("value1").value = "";
+        document.getElementById("value2").value = "";
+        document.getElementById("cal").value = "";
+        document.getElementById("result").value = "";
+      }
+    </script>
+  </body>
+</html>

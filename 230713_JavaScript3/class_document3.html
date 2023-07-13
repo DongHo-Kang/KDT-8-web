@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="container">
+      <div class="box" id="green">1</div>
+      previous 테스트
+      <div class="box" id="red">2</div>
+      next 테스트
+      <div class="box">3</div>
+      <div class="box">4</div>
+      <div class="box">5</div>
+    </div>
+    <button onclick="getParent()">getParent</button>
+    <button onclick="pSibling()">previousSibling</button>
+    <button onclick="pESibling()">previousElementSibling</button>
+    <button onclick="nSibling()">nextSibling</button>
+    <button onclick="nESibling()">nextElementSibling</button>
+    <script>
+      let container = document.getElementById("container");
+      let redDiv = document.getElementById("red");
+
+      function getParent() {
+        console.log(container.parentNode);
+        //parentNode : 부모 요소를 가져옴.
+      }
+      function pSibling() {
+        console.log(redDiv.previousSibling);
+        //previousSibling: 형제 요소를 앞에서 가져오는 친구 (#text와 주석까지 모두 node로 카운트)
+      }
+      function pESibling() {
+        console.log(redDiv.previousElementSibling);
+        //previousElementSibling: 형제 요소를 앞에서 가져오는 친구(태그만 node로 카운트)
+      }
+      function nSibling() {
+        console.log(redDiv.nextSibling);
+        //previousSibling: 형제 요소를 뒤에서 가져오는 친구 (#text와 주석까지 모두 node로 카운트)
+      }
+      function nESibling() {
+        console.log(redDiv.nextElementSibling);
+        //previousElementSibling: 형제 요소를 뒤에서 가져오는 친구(태그만 node로 카운트)
+      }
+    </script>
+  </body>
+</html>

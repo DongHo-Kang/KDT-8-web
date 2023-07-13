@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .box {
+        border: 1px solid black;
+        width: 100px;
+        height: 100px;
+      }
+      #green {
+        background-color: greenyellow;
+      }
+      #red {
+        background-color: rosybrown;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="box" id="green">1</div>
+      <div class="box" id="red">2</div>
+      <div class="box">3</div>
+      <div class="box">4</div>
+      <div class="box">5</div>
+    </div>
+    <input type="text" name="userName" id="userName" />
+    <a href="https://google.com" id="google">Google</a>
+    <script>
+      let div1 = document.getElementById("green");
+      console.log("div1: ", div1);
+
+      //1. 태그의 내부 내용을 변경
+      //innerHTML : HTML 요소를 넣는 것
+      //innerText : 문자열을 넣는 것 & 공백 문자를 제거해서 가져옴
+      //textContent : 문자열을 넣는 것 & 공백 문자 그대로 가져옴 (IE9 이전 버전에서는 동작 하지 않는다.)
+
+      div1.innerHTML = "여기는 <strong>태그</strong>입니다."; //"태그" 글자가 두껍게 나옴.
+      div1.innerText = "여기는 <strong>태그</strong>입니다.";
+      div1.textContent = "    여기는 <strong>태그</strong>입니다.           ";
+
+      //2. 속성 변경
+      let google = document.getElementById("google");
+      console.log("google: ", google);
+      console.log("google.href:", google.href);
+      google.href = "https://naver.com";
+      google.setAttribute("href", "https://daum.net");
+      //setAttribute("속성", "값");
+
+      google.style = "color:red; border:1px solid black;";
+      google.style.color = "red";
+      google.style.border = "1px solid black";
+
+      //3. class 변경( classList)
+      console.log("classList:", google.classList);
+      console.log("classList:", div1.classList);
+      google.classList.add("box"); //google 클래스 요소에 box를 추가하겠다.
+      console.log("classList:", google.classList);
+      google.classList.remove("box");
+
+      //classList.add : 클래스 추가
+      //classList.remove : 클래스 제거
+      //classList.contains : 클래스의 유무를 확인, true/false 반환
+      //classList.toggle : 클래스가 있으면 제거, 없으면 추가
+    </script>
+
+    <button onclick="toggleClass();">toggle</button>
+    <style>
+      .d-none {
+        opacity: 0.5;
+      }
+    </style>
+    <script>
+      function toggleClass() {
+        //button 태그에 d-none 클래스를 버튼을 누를 때마다 투명도 반복
+        let button = document.getElementsByTagName("button");
+        console.log("button:", button[0]);
+        button[0].classList.add("d-none");
+        //1.
+        if (button[0].classList.contains("d-none")) {
+          button[0].classList.remove("d-none");
+        } else {
+          buttonpp[0].classList.add("d-none");
+        }
+        //2. toggle
+        button[0].classList.toggle("d-none"); //1번 2번이 같은 기능을 수행.
+      }
+    </script>
+  </body>
+</html>
