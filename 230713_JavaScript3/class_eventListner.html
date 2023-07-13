@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div {
+        border: 1px solid black;
+        margin-top: 10px;
+        width: 100px;
+        height: 100px;
+      }
+      .container {
+        width: 100%;
+        height: 1000px;
+        overflow: scroll;
+      }
+      .div1 {
+        background-color: yellow;
+      }
+      .div2 {
+        background-color: pink;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="div1">div1</div>
+      <div class="div2">div2</div>
+      <input type="text" />
+    </div>
+
+    <script>
+      let div1 = document.querySelector(".div1");
+      div1.addEventListener("click", function (e) {
+        console.log("e:", e);
+        console.log("div1에 click 이벤트가 발동되었습니다.");
+      });
+      //addEventListener(이벤트 종류, 콜백함수)
+
+      let div2 = document.querySelector(".div2");
+      div2.addEventListener("mouseover", function (e) {
+        console.log("e:", e);
+        console.log("div2에 mouseover 이벤트가 발동되었습니다.");
+        div2.style.backgroundColor = "red";
+      });
+
+      let input = document.querySelector("input");
+      input.addEventListener("keydown", function (e) {
+        console.log("e:", e);
+        console.log("input창에서 keydown 이벤트가 발동했습니다.");
+      });
+
+      window.addEventListener("scroll", function (e) {
+        console.log("e:", e);
+        console.log("window에 scroll 이벤트가 발동했습니다.");
+      });
+      window.addEventListener("resize", function (e) {
+        console.log("e:", e);
+        console.log("window에 resize 이벤트가 발동했습니다.");
+      });
+      //원도우창 사이즈 변경시.
+    </script>
+  </body>
+</html>
