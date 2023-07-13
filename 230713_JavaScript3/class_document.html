@@ -19,9 +19,9 @@
     </style>
   </head>
   <body>
-    <div class="container">
+    <!-- <div class="container">
       <div class="box" id="green">1</div>
-      <!--id는 오직 한개 -->
+      id는 오직 한개 
       <div class="box" id="red">2</div>
       <div class="box">3</div>
       <div class="box">4</div>
@@ -54,7 +54,7 @@
 
       //4 getElementsByName
       //name 속성값으로 요소를 선택해서 가져옴
-      //HTMLCollection 배열
+      //NodeList 배열
       let dom4 = document.getElementsByName("userName");
       console.log("dom4: ", dom4);
 
@@ -75,7 +75,7 @@
       //Nodelist 배열
       let dom7 = document.querySelectorAll("div");
       console.log("dom7: ", dom7);
-    </script>
+    </script> -->
 
     <div id="abc">
       Text
@@ -99,7 +99,7 @@
       let dom77 = document.querySelector("div"); // NodeList객체
 
       let div1 = document.createElement("div");
-      div1.innerHTML = "aadsdasda";
+      div1.innerHTML = "a";
       abc.appendChild(div1);
 
       console.log("dom33:", dom33);
@@ -112,10 +112,10 @@
 </html>
 
 <!--
-    HTMLCollection VS NodeList
+        HTMLCollection VS NodeList
 
-    1. 
-    - HTMLCollection 객체는 <> 요소 노드만 포함하고, (태그 요소만 포함한다.)
+        1. 
+        - HTMLCollection 객체는 <> 요소 노드만 포함하고, (태그 요소만 포함한다.)
     - NodeList 객체는 <> 요소 노드, 텍스트 노드 등을 모두 포함한다.
 
     2. 
@@ -128,6 +128,6 @@
     - NodeList 객체는 새로 추가된 요소를 가져올 수 없다.
     
     4. 
-    - HTMLCollection[] : 실제 배열이 아니다. 배열과 유사한 객체, forEach를 사용할 수 없다.
-    - NodeList[] : 실제 배열이다. forEach문 사용 가능
+    - HTMLCollection[] : 실제 배열이 아니다. 배열과 유사한 객체, forEach문을 사용할 수 없다.
+    - NodeList[] : 실제 배열이다. forEach문을 사용 가능
 -->
