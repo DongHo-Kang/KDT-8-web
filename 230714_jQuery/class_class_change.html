@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://code.jquery.com/jquery-3.7.0.js"
+      integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"
+      integrity="sha256-xLD7nhI62fcsEZK2/v8LsBcb4lG7dgULkuXoXB/j91c="
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      div {
+        width: 100px;
+        height: 100px;
+        border: 1px solid black;
+      }
+      .css1 {
+        background-color: red;
+      }
+      .css2 {
+        background-color: orange;
+      }
+      .css3 {
+        background-color: yellow;
+      }
+    </style>
+    <script>
+      // css1 ~ css7 로 선언하고
+      let cssNum = 1;
+      //   var colors = ["red", "orange", "yellow", "green", "blue", "purple"];
+      function changeColor() {
+        // 리스트를 이용해서 현재 가지고 있는 클래스로 변경하기
+        // var now = $("div").attr("class");
+        // var i = colors.indexOf(now);
+        // if (i == colors.length - 1) $("div").switchClass(now, colors[0]);
+        // else $("div").switchClass(now, colors[i + 1]);
+
+        // 전역변수 이용해서 색상 변경하기
+        if (cssNum == 7) {
+          $("div").switchClass(`css${cssNum}`, `css1`);
+        } else {
+          // css1 -> css2
+          // css2 -> css3
+          $("div").switchClass(`css${cssNum}`, `css${cssNum + 1}`);
+        }
+        // cssNum = 2
+        // cssNum = 3
+        cssNum++;
+
+        // hasClass를 이용해 클래스를 변경하기
+        // if ($("div").hasClass("red")) {
+        //   $("div").switchClass("red", "orange");
+        // } else if ($("div").hasClass("orange")) {
+        //   $("div").switchClass("orange", "yellow");
+        // } else if ($("div").hasClass("yellow")) {
+        //   $("div").switchClass("yellow", "red");
+        // }
+      }
+    </script>
+  </head>
+  <body>
+    <div class="css1" onclick="changeColor()"></div>
+  </body>
+</html>

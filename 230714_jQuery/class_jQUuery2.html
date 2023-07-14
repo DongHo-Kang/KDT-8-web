@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://code.jquery.com/jquery-3.7.0.js"
+      integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"
+      integrity="sha256-xLD7nhI62fcsEZK2/v8LsBcb4lG7dgULkuXoXB/j91c="
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      .css1 {
+        width: 100px;
+        height: 100px;
+        background-color: red;
+      }
+      .css2 {
+        width: 200px;
+        height: 200px;
+        background-color: blue;
+      }
+    </style>
+    <script>
+      function addClass() {
+        //$().addClass("클래스명")
+        $("div").addClass("css1");
+      }
+      function removeClass() {
+        $("div").removeClass("css1");
+      }
+      function hasClass() {
+        //있는지 여부 확인(boolean값)
+        alert($("div").hasClass("css1"));
+      }
+      function toggleClass() {
+        //있으면 삭제, 없으면 추가
+        $("div").toggleClass("css1");
+      }
+      function switchClass() {
+        //jQuery-UI를 불러와야 사용 가능
+        //$().switchClass("클래스명1", "클래스명2", [시간]);
+        $("div").switchClass("css1", "css2", 3000);
+      }
+    </script>
+  </head>
+  <body>
+    <div></div>
+    <button onclick="addClass()">addClass</button>
+    <button onclick="removeClass()">removeClass</button>
+    <button onclick="hasClass()">hasClass</button>
+    <button onclick="toggleClass()">toggleClass</button
+    ><button onclick="switchClass()">switchClass</button>
+  </body>
+</html>

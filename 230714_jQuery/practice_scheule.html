@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://code.jquery.com/jquery-3.7.0.js"
+      integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM="
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      .sun {
+        color: red;
+      }
+      .sat {
+        color: blue;
+      }
+    </style>
+    <script>
+      function clickNumber() {
+        $("th").on("click", function () {
+          console.log(this);
+          console.log($(this).text());
+          $("#date").val($(this).text());
+        });
+      }
+      function submit() {
+        let date = $("#date").val();
+        console.log(date);
+        let content = $("#content").val();
+        console.log(content);
+
+        $("#" + date).append("<div>" + content + "<div>");
+      }
+    </script>
+  </head>
+  <body>
+    날짜: <input type="text" id="date" />
+    <br />
+    내용: <input type="text" id="content" />
+    <br />
+    <button onclick="submit()">내용</button>
+
+    <div style="margin-left: 300px">
+      <h4 style="margin-left: 50px">2023년 7월</h4>
+      <table cellspacing="0" cellpadding="10" width="300" height="50">
+        <tr>
+          <th class="sun">日</th>
+          <th class="mon">月</th>
+          <th class="thu">火</th>
+          <th class="wed">水</th>
+          <th class="thr">木</th>
+          <th class="fri">金</th>
+          <th class="sat">土</th>
+        </tr>
+        <tr>
+          <th class="sun"></th>
+          <th class="mon"></th>
+          <th class="thu"></th>
+          <th class="wed"></th>
+          <th class="thr"></th>
+          <th class="fri"></th>
+          <th class="sat" onclick="clickNumber()" id="1">1</th>
+        </tr>
+        <tr>
+          <th class="sun" onclick="clickNumber()" id="2">2</th>
+          <th class="mon" onclick="clickNumber()" id="3">3</th>
+          <th class="thu" onclick="clickNumber()" id="4">4</th>
+          <th class="wed" onclick="clickNumber()" id="5">5</th>
+          <th class="thr" onclick="clickNumber()" id="6">6</th>
+          <th class="fri" onclick="clickNumber()" id="7">7</th>
+          <th class="sat" onclick="clickNumber()" id="8">8</th>
+        </tr>
+        <tr>
+          <th class="sun" onclick="clickNumber()" id="9">9</th>
+          <th class="mon" onclick="clickNumber()" id="10">10</th>
+          <th class="thu" onclick="clickNumber()" id="11">11</th>
+          <th class="wed" onclick="clickNumber()" id="12">12</th>
+          <th class="thr" onclick="clickNumber()" id="13">13</th>
+          <th class="fri" onclick="clickNumber()" id="14">14</th>
+          <th class="sat" onclick="clickNumber()" id="15">15</th>
+        </tr>
+        <tr>
+          <th class="sun" onclick="clickNumber()" id="16">16</th>
+          <th class="mon" onclick="clickNumber()" id="17">17</th>
+          <th class="thu" onclick="clickNumber()" id="18">18</th>
+          <th class="wed" onclick="clickNumber()" id="19">19</th>
+          <th class="thr" onclick="clickNumber()" id="20">20</th>
+          <th class="fri" onclick="clickNumber()" id="21">21</th>
+          <th class="sat" onclick="clickNumber()" id="22">22</th>
+        </tr>
+        <tr>
+          <th class="sun" onclick="clickNumber()" id="23">23</th>
+          <th class="mon" onclick="clickNumber()" id="24">24</th>
+          <th class="thu" onclick="clickNumber()" id="25">25</th>
+          <th class="wed" onclick="clickNumber()" id="26">26</th>
+          <th class="thr" onclick="clickNumber()" id="27">27</th>
+          <th class="fri" onclick="clickNumber()" id="28">28</th>
+          <th class="sat" onclick="clickNumber()" id="29">29</th>
+        </tr>
+        <tr>
+          <th class="sun" onclick="clickNumber()" id="30">30</th>
+          <th class="mon" onclick="clickNumber()" id="31">31</th>
+          <th class="thu"></th>
+          <th class="wed"></th>
+          <th class="thr"></th>
+          <th class="fri"></th>
+          <th class="sat"></th>
+        </tr>
+      </table>
+    </div>
+  </body>
+</html>

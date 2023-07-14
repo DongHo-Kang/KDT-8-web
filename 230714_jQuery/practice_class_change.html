@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://code.jquery.com/jquery-3.7.0.js"
+      integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      function changeColor() {
+        setTimeout(function () {
+          $("div").attr("style", "background-color: orange ");
+        }, 0);
+        setTimeout(function () {
+          $("div").attr("style", "background-color: yellow");
+        }, 2000);
+        setTimeout(function () {
+          $("div").attr("style", "background-color: blue");
+        }, 4000);
+        setTimeout(function () {
+          $("div").attr("style", "background-color: purple");
+        }, 6000);
+      }
+    </script>
+    <style>
+      div {
+        width: 100px;
+        height: 100px;
+        transition: background-color 2s ease;
+      }
+    </style>
+  </head>
+  <body>
+    <div style="background-color: red" onclick="changeColor()"></div>
+  </body>
+</html>
