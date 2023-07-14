@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://code.jquery.com/jquery-3.7.0.js"
+      integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM="
+      crossorigin="anonymous"
+    ></script>
+
+    <style>
+      td {
+        width: 100px;
+        height: 100px;
+        color: black;
+      }
+
+      tr > td:first-child {
+        color: red;
+      }
+      tr > td:last-child {
+        color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      날짜 : <input type="text" id="date" readonly /> <br />
+      내용 : <input type="text" id="content" /> <br />
+      <button type="button">작성</button> <br />
+    </div>
+    <div style="font-size: 2em; color: green; text-align: center">
+      2022년 7월
+    </div>
+
+    <br />
+
+    <table align="center" width="500" style="text-align: center">
+      <tr>
+        <th>日</th>
+        <th>月</th>
+        <th>火</th>
+        <th>水</th>
+        <th>木</th>
+        <th>金</th>
+        <th>土</th>
+      </tr>
+      <tr>
+        <td><p></p></td>
+        <td><p></p></td>
+        <td><p></p></td>
+        <td><p></p></td>
+        <td><p></p></td>
+        <td><p>1</p></td>
+        <td><p>2</p></td>
+      </tr>
+
+      <tr>
+        <td><p>3</p></td>
+        <td><p>4</p></td>
+        <td><p>5</p></td>
+        <td><p>6</p></td>
+        <td><p>7</p></td>
+        <td><p>8</p></td>
+        <td><p>9</p></td>
+      </tr>
+      <tr>
+        <td><p>10</p></td>
+        <td><p>11</p></td>
+        <td><p>12</p></td>
+        <td><p>13</p></td>
+        <td><p>14</p></td>
+        <td><p>15</p></td>
+        <td><p>16</p></td>
+      </tr>
+      <tr>
+        <td><p>17</p></td>
+        <td><p>18</p></td>
+        <td><p>19</p></td>
+        <td><p>20</p></td>
+        <td><p>21</p></td>
+        <td><p>22</p></td>
+        <td><p>23</p></td>
+      </tr>
+      <tr>
+        <td><p>24</p></td>
+        <td><p>25</p></td>
+        <td><p>26</p></td>
+        <td><p>27</p></td>
+        <td><p>28</p></td>
+        <td><p>29</p></td>
+        <td><p>30</p></td>
+      </tr>
+      <tr>
+        <td><p>31</p></td>
+        <td><p></p></td>
+        <td><p></p></td>
+        <td><p></p></td>
+        <td><p></p></td>
+        <td><p></p></td>
+        <td><p></p></td>
+      </tr>
+    </table>
+
+    <script>
+      // 전역변수
+      // target은 td를 클릭했을 때 어떤 td가 선택되었는지를 담고 있는 정보
+      let target = null;
+
+      $("td").on("click", function (e) {
+        let date = $(this).text(); // 클릭한 td에 있는 글자
+        $("#date").val(date);
+        target = this; // target 변수에 내가 선택한 td의 정보를 담는다.
+      });
+      $("button").on("click", function () {
+        let content = $("#content").val();
+        $(target).append("<strong>" + content + "</strong>");
+        // append는 html 문서로 넣어주는 친구 = innerText x innerHTML O
+      });
+    </script>
+  </body>
+</html>
