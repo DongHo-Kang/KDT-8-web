@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+    />
+  </head>
+  <body>
+    <nav class="navbar bg-body-tertiary" style="background-color: white">
+      <div class="container-fluid" style="background-color: white">
+        <a class="navbar-brand" href="#" style="background-color: white">
+          <img
+            src="./포스코 코딩온.png"
+            alt="Logo"
+            width="70"
+            height="40"
+            class="d-inline-block align-text-top"
+          />
+          CodingOn
+        </a>
+        <ul class="nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">소개</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="#">위치</a>
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              href="http://127.0.0.1:5501/230715_Bootstrap/login.html"
+              >로그인</a
+            >
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div
+      id="carouselExampleIndicators"
+      class="carousel slide"
+      data-bs-ride="carousel"
+    >
+      <div class="carousel-indicators">
+        <button
+          type="button"
+          data-bs-target="#carouselExampleIndicators"
+          data-bs-slide-to="0"
+          class="active"
+          aria-current="true"
+          aria-label="Slide 1"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#carouselExampleIndicators"
+          data-bs-slide-to="1"
+          aria-label="Slide 2"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#carouselExampleIndicators"
+          data-bs-slide-to="2"
+          aria-label="Slide 3"
+        ></button>
+      </div>
+
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="./포스코 코딩온.png" class="d-block w-100" alt="..." />
+        </div>
+        <div class="carousel-item">
+          <img src="/1.JPG" class="d-block w-100" alt="..." />
+        </div>
+        <div class="carousel-item">
+          <img src="/2.JPG" class="d-block w-100" alt="..." />
+        </div>
+      </div>
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#carouselExampleIndicators"
+        data-bs-slide="prev"
+      >
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#carouselExampleIndicators"
+        data-bs-slide="next"
+      >
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+
+    <ul class="nav nav-pills nav-fill">
+      <li class="nav-item">
+        <i class="bi bi-hand-index-thumb"></i>
+        <a
+          class="nav-link"
+          href="https://dongho-kang.tistory.com/3"
+          style="color: black"
+          >HTML</a
+        >
+      </li>
+      <li class="nav-item">
+        <i class="bi bi-hand-index-thumb-fill"></i>
+        <a
+          class="nav-link"
+          href="https://dongho-kang.tistory.com/4"
+          style="color: black"
+          >CSS</a
+        >
+      </li>
+      <li class="nav-item">
+        <i class="bi bi-hand-index-thumb"></i>
+        <a
+          class="nav-link"
+          href="https://dongho-kang.tistory.com/8"
+          style="color: black"
+          >JavaScript</a
+        >
+      </li>
+      <li class="nav-item">
+        <i class="bi bi-hand-index-thumb-fill"></i>
+        <a
+          class="nav-link"
+          href="https://dongho-kang.tistory.com/16"
+          style="color: black"
+          >JQuery</a
+        >
+      </li>
+    </ul>
+    <br />
+    <nav aria-label="Page navigation example">
+      <ul class="pagination justify-content-center">
+        <li class="page-item disabled">
+          <a class="page-link">Previous</a>
+        </li>
+        <li class="page-item">
+          <a class="page-link" href="#" style="color: black">1</a>
+        </li>
+        <li class="page-item">
+          <a class="page-link" href="#" style="color: black">2</a>
+        </li>
+        <li class="page-item">
+          <a class="page-link" href="#" style="color: black">3</a>
+        </li>
+        <li class="page-item">
+          <a class="page-link" href="#" style="color: black">Next</a>
+        </li>
+      </ul>
+    </nav>
+    <div class="position-relative">
+      <div class="position-absolute bottom-0 end-0">
+        <i class="bi bi-info-square"></i
+        ><a
+          class="link-offset-2 link-underline link-underline-opacity-0"
+          href="https://codingon.co.kr/"
+          style="color: black"
+          >더 많은 정보 보러 가기</a
+        >
+      </div>
+    </div>
+  </body>
+</html>
