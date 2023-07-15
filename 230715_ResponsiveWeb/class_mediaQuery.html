@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        background-color: aqua;
+      }
+
+      @media screen and (min-width: 480px) and (max-height: 300px) {
+        /*width가 480px 이상일때 적용된다. 그리고 height가 300px 이하일 때 적용된다.*/
+        body {
+          background-color: pink;
+        }
+      }
+
+      @media screen and (max-width: 300px) {
+        /*300px이하일 때 적용된다.*/
+        body {
+          background-color: green;
+        }
+      }
+    </style>
+  </head>
+  <body></body>
+</html>
