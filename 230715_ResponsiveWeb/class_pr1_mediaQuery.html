@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container {
+        display: flex;
+      }
+
+      .item {
+        width: 100px;
+        height: 100px;
+        background-color: black;
+        margin: 15px;
+      }
+
+      @media screen and (max-width: 700px) {
+        .container {
+          display: block;
+        }
+
+        .item {
+          background-color: skyblue;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+    </div>
+  </body>
+</html>
