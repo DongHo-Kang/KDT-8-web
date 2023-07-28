@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h4><%=number%>단부터 <%=number2%>까지</h4>
+    <% for(a = number; a <= number2; a++){ for(b= 1; b <= 9; b++){ %>
+    <li><%= a + 'x' + b + '=' + (a * b) %></li>
+    <% } } %>
+  </body>
+</html>
