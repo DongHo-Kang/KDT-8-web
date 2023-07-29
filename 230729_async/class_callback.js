@@ -13,3 +13,6 @@ function callbackFunc(param) {
 }
 
 mainFunc(1, 2, callbackFunc);
+
+// mainFunc에서 param1에 1, param2에 2, callback에 callbackFunc가 할당되었다.
+// 그렇게 되면 result는 3이 나오고 callbackFunc의 param에 3이 전달된다.
