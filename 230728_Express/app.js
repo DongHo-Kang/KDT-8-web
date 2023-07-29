@@ -5,9 +5,6 @@ const PORT = 8001;
 
 app.set("view engine", "ejs");
 app.set("views", "./views");
-// app.set("views1", "./views/changeImage");
-// app.set("views2", "./views/larva");
-// app.set("views3", "./views/multiplicationTables");
 
 app.use(express.static("views/changeImage"));
 app.use(express.static("views/larva"));
