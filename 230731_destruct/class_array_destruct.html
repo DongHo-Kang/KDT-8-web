@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //배열
+      const lists = ["apple", "grape"];
+      //const로 할당하였을 때 배열 원소는 접근하여 변경할 수 있지만 배열을 바꿀 수 있다.
+      //즉, item1 = 'peach' 가능, [item1, item2] = [item2, item1]은 불가능 , let은 가능
+      //기존 방식
+      console.log(lists[0], lists[1]);
+      //구조 분해
+      [item1, item2] = lists;
+      console.log(item1, item2);
+      //교환
+      let x = 1,
+        y = 3;
+      [x, y] = [y, x];
+      console.log(x, y);
+    </script>
+  </body>
+</html>
