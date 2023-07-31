@@ -6,6 +6,34 @@
     <title>Document</title>
   </head>
   <body>
+    <!--html에서도 넣을 수 있구나만 알고 넘어가기, 보안성으로는 할 수 없다. 검사페이지에서 해커가 조작하여 사용할 수 있으므로 보안에는 취약하다.-->
     <h1><%= title %></h1>
+
+    <h4>GET 요청</h4>
+    <form action="/getForm" method="get">
+      <input type="text" placeholder="id" name="id" required />
+      <input type="password" placeholder="pw" name="pw" required />
+      <button type="submit">제출</button>
+    </form>
+    <hr />
+    <h4>POST 요청</h4>
+    <form action="/postForm" method="post">
+      <input type="text" placeholder="id" name="id" readonly />
+      <input
+        type="password"
+        placeholder="pw"
+        name="pw"
+        pattern="^([a-z0-9]){8,12}"
+      /><br />
+      <input type="email" /><br />
+      <input type="radio" /><br />
+      <input type="checkbox" /><br />
+      <input type="tel:010" /><br />
+      <!--모바일에서 가능-->
+      <input type="number" /><br /><!--모바일에서 숫자 키패드가 뜬다.-->
+      <input type="date" /><br />
+      <input type="time" /><br />
+      <button type="submit">제출</button>
+    </form>
   </body>
 </html>

@@ -21,9 +21,25 @@ app.post("/", (req, res) => {
   console.log(req.body); //request-body 방식으로 값을 받아온다.
 });
 
-app.put("/", (req, res) => {
-  console.log(req.body);
+app.get("/getForm", (req, res) => {
+  console.log(req.query);
+  res.render("result", {
+    title: "GET요청 폼 결과 확인하기",
+    userInfo: req.query, //userInfo: {id:"", pw:""}
+  });
 });
+
+app.post("/postForm", (req, res) => {
+  console.log(req.body);
+  res.render("result", {
+    title: "POST요청 폼 결과 확인하기",
+    userInfo: req.body, //userInfo: {id:"", pw:""}
+  });
+});
+
+// app.put("/", (req, res) => {
+//   console.log(req.body);
+// });
 
 app.listen(PORT, () => {
   console.log(`http://localhost:${PORT}`);
