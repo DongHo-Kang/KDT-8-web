@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //rest파라미터 나머지 값들을 받아올 때 사용, 뒤에 있어야 사용이 가능하다.
+      function get(a, ...rest) {
+        console.log(a);
+        console.log(rest);
+      }
+      get(10, 20, 30, 40, 50);
+    </script>
+  </body>
+</html>
