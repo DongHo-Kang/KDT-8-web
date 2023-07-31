@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1></h1>
+    <h2>회원가입 결과</h2>
+    <div><span><%= userInfo.gender%></span>분,</div>
+    <div><span><%= userInfo.id%></span>님 환영합니다.</div>
+    <div>
+      당신의 생년월일은 <span><%= userInfo.year%></span>년
+      <span><%= userInfo.month%></span>월<span><%= userInfo.day%></span>일
+      입니다.
+    </div>
+    <div>
+      <span><%= userInfo.id%></span>님의 관심사는
+      <span><%= userInfo.hobby%></span>이군요.
+    </div>
+
+    <a href="/">메인으로 가기</a>
+  </body>
+</html>
