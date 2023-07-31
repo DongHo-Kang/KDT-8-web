@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //spread 연산자 (...) //배열을 해체할 때 많이 사용함.
+      const a = [1, 2, 3];
+      const b = [4, 5];
+      //기존 합치는 법 (concat함수 사용)
+      const concat = a.concat(b);
+      console.log(concat);
+      //spread
+      const spread = [...a, ...b];
+      const spread1 = [...b, ...a];
+      console.log(spread);
+      console.log(spread1);
+
+      const Person = {
+        name: "kang",
+        age: 26,
+      };
+      console.log({ ...Person });
+      const c = "Hello";
+      console.log([...c]);
+    </script>
+  </body>
+</html>
