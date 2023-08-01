@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>get으로 정보받기</h1>
+    <form name="register">
+      이름<input type="text" placeholder="id" name="id" />
+      <fieldset>
+        <legend>성별</legend>
+        <input type="radio" name="gender" id="gender" value="남성" />남자
+        <input type="radio" name="gender" id="gender" value="여성" />여자
+      </fieldset>
+      <br />
+      <fieldset>
+        <legend>생년월일</legend>
+        <select name="year" id="year">
+          <% for(let i= 1990; i <=2023; i ++){ %>
+          <option value="<%= i%>"><%= i%></option>
+          <% } %></select
+        >년
+        <select name="month" id="month">
+          <% for(let i= 1; i <=12; i ++){ %>
+          <option value="<%= i%>"><%= i%></option>
+          <% } %> ></select
+        >월
+        <select name="day" id="day">
+          <% for(let i= 1; i <=31; i ++){ %>
+          <option value="<%= i%>"><%= i%></option>
+          <% } %></select
+        >일
+      </fieldset>
+      <br />
+      <fieldset>
+        <legend>관심사</legend>
+        <input type="checkbox" value="여행" name="hobby" id="hobby1" />여행
+        <input type="checkbox" value="패션" name="hobby" id="hobby2" />패션
+        <input type="checkbox" value="음식" name="hobby" id="hobby3" />음식
+      </fieldset>
+      <br />
+      <button type="button" onclick="axiosGet()">회원가입</button>
+    </form>
+    <div class="result"></div>
+    <script>
+      const resultBox = document.querySelector(".result");
+      function axiosGet() {
+        console.log("axios get");
+        const form = document.forms["register"];
+        const select = Array.from(
+          form.querySelectorAll('input[name="hobby"]:checked')
+        ).map((checkbox) => checkbox.value);
+        const data = {
+          id: form.id.value,
+          gender: form.gender.value,
+          year: form.year.value,
+          month: form.month.value,
+          day: form.day.value,
+          hobby: select,
+        };
+        axios({
+          method: "GET",
+          url: "/axios",
+          params: data,
+        }).then((res) => {
+          console.log(res);
+          const hobbyText =
+            res.data.hobby.length > 0
+              ? res.data.hobby.join(", ")
+              : "관심사 없음";
+          resultBox.textContent = `회원가입 완료!! ${hobbyText}을 좋아시는 회원님의 이름은 ${res.data.id}이고 성별은 ${res.data.gender}이시고 ${res.data.year}년${res.data.month}월${res.data.day}일에 태어나셨습니다.`;
+        });
+      }
+    </script>
+  </body>
+</html>
