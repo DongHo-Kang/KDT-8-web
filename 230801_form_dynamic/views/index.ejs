@@ -121,7 +121,7 @@
       function fetchGet() {
         console.log("fetch get");
         const form = document.forms["register"];
-        const url = `?name=${form.name.value}&gender=${form.name.value}`;
+        const url = `?name=${form.name.value}&gender=${form.gender.value}`;
 
         fetch(`/fetch${url}`, {
           method: "GET",
