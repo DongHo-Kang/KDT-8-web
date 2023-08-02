@@ -7,43 +7,56 @@
     <title>Document</title>
   </head>
   <body>
-    <h4>개인정보</h4>
-    <form action="register" id="register">
-      아이디: <input type="text" name="id" id="id" /><br />
+    <h3>개인 정보</h3>
+    <form name="register">
+      아이디: <input type="text" name="id" id="id" /> <br />
       비밀번호: <input type="password" name="pw" id="pw" /><br />
       이름: <input type="text" name="name" id="name" /><br />
       나이: <input type="number" name="age" id="age" /><br />
-      <form action="/upload" method="post" enctype="multipart/form-data">
-        프로필 사진: <input type="file" name="profile" /><br />
-      </form>
+      프로필 사진: <input type="file" name="profile" id="profile" /><br />
+      <button type="button" onclick="resetForm()">리셋</button>
+      <button type="button" onclick="signUp()">회원가입</button>
+      <div class="result"></div>
     </form>
-    <button type="button" onclick="reset()">리셋</button>
-    <button type="button" onclick="submit()">회원가입</button>
-    <div class="result"></div>
     <script>
-      const resultBox = document.getElementsByClassName("result");
-      const reset = document.getElementById("register");
+      let resultBox = document.querySelector(".result");
 
-      function reset() {
-        reset.reset;
-      }
-
-      function submit() {
+      function signUp() {
         const form = document.forms["register"];
         const data = {
           id: form.id.value,
           pw: form.pw.value,
-          age: form.age.value,
           name: form.name.value,
+          age: form.age.value,
         };
+
+        const file = document.getElementById("profile");
+        console.log(file.files[0]);
+
         axios({
           method: "POST",
-          url: "/upload",
-          data,
-        }).then((res) => {
-          console.log("res", res);
-          resultBox.innerHTML = `<div><img src=${res.data.path}></div>`;
-        });
+          url: "/signUp",
+          data: data,
+        })
+          .then((res) => {
+            console.log("file", res);
+            const formData = new FormData();
+            formData.append("id", res.data.id);
+            formData.append("profile", file.files[0]);
+            return axios({
+              method: "POST",
+              url: "/signUpFile",
+              data: formData,
+              headers: {
+                "content-type": "multipart/form-data",
+              },
+            });
+          })
+          .then((res) => {
+            console.log("finish", res);
+            console.log("img", res.data.file.path);
+            resultBox.innerHTML = `<div><img src=${res.data.file.path} ></div>`;
+          });
       }
     </script>
   </body>
