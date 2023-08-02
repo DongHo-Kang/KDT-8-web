@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>form 싱글 연습</h1>
+    <!--method="post" enctype="multipart/form-data" 이 부분은 필수-->
+    <form action="/upload" method="post" enctype="multipart/form-data">
+      <input type="file" name="userfile" /><br />
+      <input type="text" name="title" /><br />
+      <button type="submit">한개 파일 업로드</button>
+    </form>
+    <br />
+    <h1>form 멀티 연습 version1</h1>
+    <form action="/upload/array" method="post" enctype="multipart/form-data">
+      <input type="file" name="userfiles" multiple /><br />
+      <input type="text" name="title" /><br />
+      <button type="submit">파일 여러개 업로드</button>
+    </form>
+    <h1>form 멀티 연습 version2</h1>
+    <form action="/upload/fields" method="post" enctype="multipart/form-data">
+      <input type="file" name="userfile1" /><br />
+      <input type="text" name="title1" /><br />
+      <input type="file" name="userfile2" /><br />
+      <input type="text" name="title2" /><br />
+      <button type="submit">파일들 업로드</button>
+    </form>
+    <h1>동적 파일 업로드</h1>
+    <!--동적일 때는 form 태그가 필요 없다.-->
+    <input type="file" name="dynamic-userfile" id="dynamic-userfile" /><br />
+    <button type="button" onclick="fileUpload()">업로드</button>
+    <br />
+    <div class="result"></div>
+    <script>
+      let resultBox = document.querySelector(".result");
+
+      function fileUpload() {
+        const file = document.getElementById("dynamic-userfile");
+        console.log(file.files[0]);
+        const formData = new FormData();
+        formData.append("dynamic-userfile", file.files[0]); //폼 데이터 넣기
+
+        axios({
+          method: "POST",
+          url: "/dynamicFile",
+          data: formData,
+          headers: {
+            "content-type": "multipart/form-data", //enctype="multipart/form-data"
+          },
+        }).then((res) => {
+          console.log("res", res);
+          resultBox.innerHTML = `<div><img src=${res.data.path}></div>`;
+        });
+      }
+    </script>
+  </body>
+</html>
