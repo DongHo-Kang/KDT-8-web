@@ -6,7 +6,7 @@ const PORT = 8000;
 
 //multer 세팅
 const uploadDetail = multer({
-  Storage: multer.diskStorage({
+  storage: multer.diskStorage({
     destination(req, file, done) {
       done(null, "uploads/");
     },
@@ -37,7 +37,7 @@ app.get("/", (req, res) => {
 
 app.post("/result", uploadDetail.single("profile"), (req, res) => {
   console.log(req.file);
-  res.render("result", {
+  res.render("class_result", {
     userInfo: req.body,
     profile: req.file.path,
   });
