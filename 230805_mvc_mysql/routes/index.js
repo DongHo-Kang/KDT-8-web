@@ -6,4 +6,6 @@ router.get("/", controller.main);
 
 router.get("/visitor", controller.getVisitors);
 
+router.get("/visitor", controller.register);
+
 module.exports = router;
