@@ -47,6 +47,17 @@ app.post("/signUp", (req, res) => {
   });
 });
 
+
+
+//server open
+app.listen(PORT, () => {
+  console.log(`http://localhost:${PORT}`);
+});
+
+
+
+
+
 // //파일 접근 및 경로 세팅
 // const uploadDetail = multer({
 //   storage: multer.diskStorage({
@@ -68,8 +79,3 @@ app.post("/signUp", (req, res) => {
 //   };
 //   res.send(responseObj);
 // });
-
-//server open
-app.listen(PORT, () => {
-  console.log(`http://localhost:${PORT}`);
-});
