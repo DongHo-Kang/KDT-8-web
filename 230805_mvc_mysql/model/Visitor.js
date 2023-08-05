@@ -30,8 +30,8 @@ exports.getVisitors = (callback) => {
 
 //2.추가부분
 exports.register = (name, comment, callback) => {
-  const sql = `INSERT INTO visitor(name, comment) values ( ${name}, ${comment});`;
-  conn.query(sql, (err, rows) => {
+  const sql = `INSERT INTO visitor(name, comment) values ( ?,?);`;
+  conn.query(sql, [name, comment], (err, rows) => {
     if (err) throw err;
 
     console.log("insert:", rows);

@@ -42,7 +42,7 @@
           <td><%= data[i].name %></td>
           <td><%= data[i].comment %></td>
           <td><button type="button">수정</button></td>
-          <td><button type="button" id="register">삭제</button></td>
+          <td><button type="button">삭제</button></td>
         </tr>
         <% }%>
       </tbody>
@@ -53,7 +53,7 @@
       const name = document.getElementById("name").value;
       const content = document.getElementById("content").value;
 
-      fetch("/visitor", {
+      fetch("/register", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
