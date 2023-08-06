@@ -30,11 +30,30 @@ exports.getVisitors = (callback) => {
 
 //2.추가부분
 exports.register = (name, comment, callback) => {
-  const sql = `INSERT INTO visitor(name, comment) values ( ?,?);`;
+  const sql = `INSERT INTO visitor(name, comment) values (?,?);`;
+  //name과 comment 값을 바인딩할 때, 퀴리 문자열 내에 직접 값을 넣는게 아니라 ? 사용한다. 이러면 SQL injection을 방지할 수 있다.
   conn.query(sql, [name, comment], (err, rows) => {
+    //?부분을 넣기 위해 [name, comment] 사용.
     if (err) throw err;
 
     console.log("insert:", rows);
     callback(rows);
+  });
+};
+
+//3.
+exports.getData = (id, callback) => {
+  const sql = "SELECT name, comment FROM visitor WHERE id = ?";
+  conn.query(sql, [id], (err, result) => {
+    console.log(result);
+    callback(result);
+  });
+};
+
+exports.editFin = (id, name, comment, callback) => {
+  const sql = `UPDATE visitor SET name= ? , comment =? WHERE id =? `;
+  conn.query(sql, [name, comment, id], (err, result) => {
+    console.log(result);
+    callback(result);
   });
 };

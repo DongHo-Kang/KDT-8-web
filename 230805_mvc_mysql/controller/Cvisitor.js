@@ -24,11 +24,27 @@ exports.getVisitors = (req, res) => {
 exports.register = (req, res) => {
   const name = req.body.name;
   const comment = req.body.content;
-  console.log("되냐?");
   Visitor.register(name, comment, (result) => {
     console.log("register", {
       data: result,
     });
     res.json({ success: true, message: "방명록이 등록되었습니다." });
+  });
+};
+
+//3.수정을 위해 값 클릭된 값 불러오기
+exports.getData = (req, res) => {
+  const id = req.params.id;
+  Visitor.getData(id, (result) => {
+    res.json(result);
+  });
+};
+
+exports.editData = (req, res) => {
+  const id = req.body.id;
+  const name = req.body.name;
+  const comment = req.body.comment;
+  Visitor.edit(id, name, comment, (result) => {
+    res.json({ success: true, message: "방명록이 수정되었습니다." });
   });
 };

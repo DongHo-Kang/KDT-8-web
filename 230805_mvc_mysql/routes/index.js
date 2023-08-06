@@ -8,4 +8,8 @@ router.get("/visitor", controller.getVisitors);
 
 router.post("/register", controller.register);
 
+router.get("/getData/:id", controller.getData);
+
+router.post("/editFin", controller.editData);
+
 module.exports = router;
