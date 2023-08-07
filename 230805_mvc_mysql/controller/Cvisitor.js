@@ -40,11 +40,11 @@ exports.getData = (req, res) => {
   });
 };
 
-exports.editData = (req, res) => {
+exports.editFin = (req, res) => {
   const id = req.body.id;
   const name = req.body.name;
   const comment = req.body.comment;
-  Visitor.edit(id, name, comment, (result) => {
+  Visitor.editFin(id, name, comment, (result) => {
     res.json({ success: true, message: "방명록이 수정되었습니다." });
   });
 };

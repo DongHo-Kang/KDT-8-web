@@ -57,3 +57,5 @@ exports.editFin = (id, name, comment, callback) => {
     callback(result);
   });
 };
+
+//4. 삭제

@@ -70,7 +70,7 @@
           console.log(data);
           if (data.success) {
             console.log(data.message);
-            location.reload(); //등록하면서 새로고침하기.
+            //location.reload(); //등록하면서 새로고침하기.
           } else {
             console.log("등록 오류1", data.message);
           }
@@ -80,15 +80,15 @@
         });
     });
 
+    //수정 버튼 클릭 시 값들 name, content에 넣기
     document.addEventListener("click", (event) => {
       if (event.target.id === "edit-btn") {
         const id = event.target.getAttribute("data-id");
         const registerBtn = document.getElementById("register");
+        console.log("id값", id);
 
         registerBtn.innerText = "수정 완료";
         registerBtn.id = "editFin";
-
-        document.removeEventListener("click", handleClick); // 기존 이벤트 리스너 제거
 
         fetch(`/getData/${id}`, {
           method: "GET",
@@ -126,7 +126,7 @@
             console.log(data);
             if (data.success) {
               console.log(data.message);
-              location.reload();
+              //location.reload();
             } else {
               console.log("수정 오류1", data.message);
             }
@@ -136,44 +136,5 @@
           });
       }
     }
-
-    // 기존의 이벤트 리스너를 저장하는 변수
-    let handleClick;
-
-    function registerEventListeners() {
-      handleClick = (event) => {
-        if (event.target.id === "edit-btn") {
-          // 수정 버튼 클릭 시
-          const id = event.target.getAttribute("data-id");
-          const registerBtn = document.getElementById("register");
-
-          registerBtn.innerText = "수정 완료";
-          registerBtn.id = "editFin";
-
-          // 기존 이벤트 리스너를 제거합니다.
-          document.removeEventListener("click", handleClick);
-
-          fetch(`/getData/${id}`, {
-            method: "GET",
-          })
-            .then((response) => response.json())
-            .then((data) => {
-              document.getElementById("name").value = data[0].name;
-              document.getElementById("content").value = data[0].comment;
-
-              // 수정 완료 버튼 클릭 이벤트 리스너를 등록합니다.
-              document.addEventListener("click", handleEditFinClick);
-            })
-            .catch((error) => {
-              console.log("데이터 가져오기 오류:", error);
-            });
-        }
-      };
-
-      document.addEventListener("click", handleClick);
-    }
-
-    // 최초에 이벤트 리스너를 등록합니다.
-    registerEventListeners();
   </script>
 </html>

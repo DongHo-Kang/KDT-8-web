@@ -10,6 +10,6 @@ router.post("/register", controller.register);
 
 router.get("/getData/:id", controller.getData);
 
-router.post("/editFin", controller.editData);
+router.post("/editFin", controller.editFin);
 
 module.exports = router;
