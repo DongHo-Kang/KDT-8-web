@@ -27,6 +27,7 @@
     <script>
       function handleSignUp() {
         const form = document.forms["signup"];
+        const name = form.name.value;
         const pw = form.pw.value;
         const checkPw = form.checkPw.value;
         if (pw === checkPw) {
@@ -40,8 +41,8 @@
             },
           }).then((res) => {
             console.log("res", res);
-            const html = `${res.data.message} 환영합니다. 회원가입이 완료되었습니다.`;
-            console.log(html);
+            alert(`${name}님 환영합니다. 회원가입이 완료되었습니다.`);
+            window.location.reload();
           });
         } else {
           alert("비밀번호가 일치하지 않습니다.");
