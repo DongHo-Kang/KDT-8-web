@@ -51,8 +51,8 @@ exports.getData = (id, callback) => {
 };
 
 exports.editFin = (id, name, comment, callback) => {
-  const sql = `UPDATE visitor SET name= ? , comment =? WHERE id =? `;
-  conn.query(sql, [name, comment, id], (err, result) => {
+  const sql = `UPDATE visitor SET name= '${name}' , comment = '${comment}' WHERE id ='${id}' `;
+  conn.query(sql, (err, result) => {
     console.log(result);
     callback(result);
   });

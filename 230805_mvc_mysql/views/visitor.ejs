@@ -90,6 +90,8 @@
         registerBtn.innerText = "수정 완료";
         registerBtn.id = "editFin";
 
+        document.removeEventListener("click", handleClick);
+
         fetch(`/getData/${id}`, {
           method: "GET",
         })

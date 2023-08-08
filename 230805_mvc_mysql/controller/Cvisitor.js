@@ -45,6 +45,6 @@ exports.editFin = (req, res) => {
   const name = req.body.name;
   const comment = req.body.comment;
   Visitor.editFin(id, name, comment, (result) => {
-    res.json({ success: true, message: "방명록이 수정되었습니다." });
+    res.json({ success: result, message: "방명록이 수정되었습니다." });
   });
 };
