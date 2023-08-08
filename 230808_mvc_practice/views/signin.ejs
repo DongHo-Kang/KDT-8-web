@@ -7,7 +7,7 @@
     <title>Document</title>
   </head>
   <body>
-    <form name="user-form">
+    <form name="user_form">
       <fieldset>
         <legend>로그인하기</legend>
         <input type="text" id="userId" placeholder="아이디" /><br />
@@ -18,7 +18,7 @@
 
     <script>
       function login() {
-        const form = document.forms["user-form"];
+        const form = document.forms["user_form"];
         axios({
           method: "POST",
           url: "/user/signin",
@@ -31,7 +31,7 @@
             console.log("res", res);
             if (res.data.result) {
               alert(`${res.data.data.name}님, 환영합니다.`);
-              window.location.href = "/user/profile";
+              window.location.href = `/user/profile/${res.data.data.id}`;
             } else {
               alert("로그인 실패");
               form.reset();

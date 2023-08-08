@@ -31,3 +31,27 @@ exports.postSignIn = (req, res) => {
     }
   });
 };
+
+exports.getProfile = (req, res) => {
+  const userId = req.params.id;
+  User.getProfile(req, (userProfile) => {
+    if (userProfile !== null) {
+      res.render("profile", { userId, profileData: userProfile });
+      console.log({ userId, profileData: userProfile });
+    } else {
+      res.render("profile", { userId, profileData: null });
+    }
+  });
+};
+
+// exports.postProfile = (req, res) => {
+//   User.postProfile(req, (result) => {
+//     if (result.length > 0) {
+//       res.send({
+//         result: true,
+//         data: result[0],
+//       });
+//       console.log("post회원정보", result);
+//     }
+//   });
+// };

@@ -38,3 +38,35 @@ exports.postSignIn = (data, callback) => {
     callback(rows);
   });
 };
+
+exports.getProfile = (req, callback) => {
+  const query = `SELECT *FROM login WHERE id='${req.params.id}' `;
+  conn.query(query, (err, rows) => {
+    if (err) {
+      console.log(err);
+      return;
+    }
+    console.log("데이터", rows);
+    if (rows.length > 0) {
+      const userProfile = rows[0];
+      callback(userProfile);
+    } else {
+      callback(null);
+    }
+  });
+};
+
+// exports.postProfile = (req, callback) => {
+//   const query = `SELECT *FROM login WHERE id='${req.params.id}' `;
+//   conn.query(query, (err, rows) => {
+//     if (err) {
+//       console.log(err);
+//       return;
+//     }
+//     // console.log("post데이터", rows);
+//     if (rows.length > 0) {
+//       const userProfile = rows[0];
+//       callback(userProfile);
+//     }
+//   });
+// };
