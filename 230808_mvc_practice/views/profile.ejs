@@ -11,12 +11,21 @@
     <form name="profile_form">
       <fieldset>
         <legend>회원정보 확인 및 수정</legend>
-        이름<input type="text" id="name" placeholder="" /> <br />아이디<input
+        이름<input
+          type="text"
+          id="name"
+          placeholder="<%= profileData.name %>"
+        />
+        <br />아이디<input
           type="text"
           id="userId"
-          placeholder=""
+          placeholder="<%= profileData.userid %>"
         /><br />
-        비밀번호<input type="text" id="pw" placeholder="" /><br />
+        비밀번호<input
+          type="text"
+          id="pw"
+          placeholder="<%= profileData.pw %>"
+        /><br />
         비밀번호 확인<input
           type="text"
           id="checkPw"
@@ -27,17 +36,6 @@
       </fieldset>
     </form>
 
-    <script>
-      axios.get(`/user/profile/${userId}`).then((response) => {
-        const profileData = response.data.profileData;
-        console.log("profileData:", profileData);
-        if (profileData) {
-          document.getElementById("name").value = profileData.name;
-          document.getElementById("userId").value = profileData.userid;
-          document.getElementById("pw").value = profileData.pw;
-          console.log("성공", profileData);
-        }
-      });
-    </script>
+    <script></script>
   </body>
 </html>

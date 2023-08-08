@@ -43,15 +43,3 @@ exports.getProfile = (req, res) => {
     }
   });
 };
-
-// exports.postProfile = (req, res) => {
-//   User.postProfile(req, (result) => {
-//     if (result.length > 0) {
-//       res.send({
-//         result: true,
-//         data: result[0],
-//       });
-//       console.log("post회원정보", result);
-//     }
-//   });
-// };
