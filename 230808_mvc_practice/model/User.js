@@ -21,18 +21,20 @@ exports.postSignUp = (data, callback) => {
     console.log("signup", rows);
     if (err) {
       console.log(err);
+      return;
     }
     callback(rows);
   });
 };
 
 exports.postSignIn = (data, callback) => {
-  const query = `SELECT name From login WHERE userId='${data.userId}' AND pw='${data.pw}'`;
+  const query = `SELECT * From login WHERE userId='${data.userId}' AND pw='${data.pw}'`;
   conn.query(query, (err, rows) => {
-    console.log("login", rows);
     if (err) {
       console.log(err);
+      return;
     }
+    console.log("login", rows);
     callback(rows);
   });
 };

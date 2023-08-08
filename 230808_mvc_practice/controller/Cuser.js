@@ -17,13 +17,17 @@ exports.getSignIn = (req, res) => {
 };
 
 exports.postSignIn = (req, res) => {
-  console.log(req.body);
+  console.log("postSingin", req.body);
   User.postSignIn(req.body, (result) => {
-    if (result === 1) {
-      res.send({ result: result, message: `'${result.name}'님, 환영합니다.` });
-      console.log("회원가입 정보: ", req.body);
+    if (result.length > 0) {
+      res.send({
+        result: true,
+        data: result[0],
+        message: `${result[0].name}님, 환영합니다.`,
+      });
+      console.log("회원가입 정보: ", result);
     } else {
-      res.send({ result: result, message: "로그인 실패" });
+      res.send({ result: false, data: null, message: "로그인 실패" });
     }
   });
 };

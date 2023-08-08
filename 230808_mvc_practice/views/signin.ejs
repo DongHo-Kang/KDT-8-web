@@ -21,7 +21,7 @@
         const form = document.forms["user-form"];
         axios({
           method: "POST",
-          url: "/user/sigin",
+          url: "/user/signin",
           data: {
             userId: form.userId.value,
             pw: form.pw.value,
@@ -29,14 +29,17 @@
         })
           .then((res) => {
             console.log("res", res);
-            if (res.data.length === 1) {
-              alert(`${res.data.name}님, 환영합니다.`);
+            if (res.data.result) {
+              alert(`${res.data.data.name}님, 환영합니다.`);
+              window.location.href = "/user/profile";
             } else {
-              alert("로그인 실패33");
+              alert("로그인 실패");
+              form.reset();
             }
           })
           .catch((err) => {
-            alert("로그인 실패1");
+            alert("로그인 실패");
+            form.reset();
             console.error("Error while sending request:", err);
           });
       }
