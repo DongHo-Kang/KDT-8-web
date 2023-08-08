@@ -11,31 +11,76 @@
     <form name="profile_form">
       <fieldset>
         <legend>회원정보 확인 및 수정</legend>
-        이름<input
-          type="text"
-          id="name"
-          placeholder="<%= profileData.name %>"
-        />
+        이름<input type="text" id="name" value="<%= profileData.name %>" />
         <br />아이디<input
           type="text"
           id="userId"
-          placeholder="<%= profileData.userid %>"
+          value="<%= profileData.userid %>"
         /><br />
         비밀번호<input
           type="text"
           id="pw"
-          placeholder="<%= profileData.pw %>"
+          value="<%= profileData.pw %>"
         /><br />
         비밀번호 확인<input
           type="text"
           id="checkPw"
           placeholder="한번 더 입력하세요."
         /><br />
-        <button type="button" onclick="updata()">수정</button>
+        <input type="hidden" name="id" id="id" value="<%= profileData.id%>" />
+        <button type="button" onclick="update()">수정</button>
         <button type="button" onclick="deletedata()">탈퇴</button>
       </fieldset>
     </form>
 
-    <script></script>
+    <script>
+      function update() {
+        const form = document.forms["profile_form"];
+        const name = form.name.value;
+        const pw = form.pw.value;
+        const checkPw = form.checkPw.value;
+        const id = form.id.value;
+        const userId = form.userId.value;
+        if (pw === checkPw) {
+          axios({
+            method: "POST",
+            url: `/user/profile/${id}`,
+            data: {
+              id: id,
+              name: name,
+              userId: userId,
+              pw: pw,
+            },
+          }).then((res) => {
+            console.log("res", res);
+            alert(`${name}님 회원정보가 수정되었습니다.다시 로그인 해주세요.`);
+            window.location.href = "/user/signin";
+          });
+        } else {
+          alert("비밀번호가 일치하지 않습니다.");
+        }
+      }
+      function deletedata() {
+        const form = document.forms["profile_form"];
+        const id = form.id.value;
+        const pw = form.pw.value;
+        const checkPw = form.checkPw.value;
+        if (pw === checkPw) {
+          axios({
+            method: "POST",
+            url: `/user/profile/${id}`,
+            data: {
+              id: id,
+            },
+          }).then((res) => {
+            console.log("res", res);
+            alert("회원탈퇴가 되었습니다. 감사합니다.");
+            window.location.href = "/";
+          });
+        } else {
+          alert("비밀번호가 일치하지 않습니다.");
+        }
+      }
+    </script>
   </body>
 </html>

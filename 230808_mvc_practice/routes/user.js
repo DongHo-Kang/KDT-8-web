@@ -17,7 +17,10 @@ router.post("/signin", controller.postSignIn);
 //프로필 페이지 렌더링
 router.get(`/profile/:id`, controller.getProfile);
 
-//프로필 가져오기
-// router.post("/profile/:id", controller.postProfile);
+//프로필 업데이트
+router.post(`/profile/:id`, controller.postUpdate);
+
+//프로필 삭제
+router.post(`/profile/:id`, controller.postDelete);
 
 module.exports = router; //외부로 라우터를 보낸다.

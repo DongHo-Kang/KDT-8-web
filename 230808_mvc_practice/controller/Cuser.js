@@ -43,3 +43,19 @@ exports.getProfile = (req, res) => {
     }
   });
 };
+
+exports.postUpdate = (req, res) => {
+  console.log("Controller", req.body);
+  User.postUpdate(req.body, (result) => {
+    console.log("회원정보 업데이트: ", req.body);
+    res.send({ result: result, msg: "회원정보 업데이트 완료" });
+  });
+};
+
+exports.postDelete = (req, res) => {
+  console.log("delete", req.body);
+  User.postDelete(req.body, (result) => {
+    console.log("회원 탈퇴:", req.body);
+    res.send({ result: result, msg: "회원 탈퇴" });
+  });
+};

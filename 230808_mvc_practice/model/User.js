@@ -56,17 +56,27 @@ exports.getProfile = (req, callback) => {
   });
 };
 
-// exports.postProfile = (req, callback) => {
-//   const query = `SELECT *FROM login WHERE id='${req.params.id}' `;
-//   conn.query(query, (err, rows) => {
-//     if (err) {
-//       console.log(err);
-//       return;
-//     }
-//     // console.log("post데이터", rows);
-//     if (rows.length > 0) {
-//       const userProfile = rows[0];
-//       callback(userProfile);
-//     }
-//   });
-// };
+exports.postUpdate = (data, callback) => {
+  console.log("post", data);
+  const query = `UPDATE login SET userid='${data.userId}', name='${data.name}', pw='${data.pw}'WHERE id=${data.id}`;
+  conn.query(query, (err, rows) => {
+    console.log("update", rows);
+    if (err) {
+      console.log("update err", err);
+      return;
+    }
+    callback(rows);
+  });
+};
+
+exports.postDelete = (data, callback) => {
+  console.log("delete", data);
+  const query = `DELETE FROM login WHERE id='${data.id}'`;
+  conn.query(query, (err, rows) => {
+    if (err) {
+      console.log("delete err", err);
+      return;
+    }
+    callback(rows);
+  });
+};
