@@ -15,7 +15,9 @@ router.get("/signin", controller.signin);
 router.post("/signin", controller.post_signin);
 
 router.post("/profile", controller.post_profile);
-// router.update("/profile/edit");
-// router.delete("/profile/delete");
+
+router.patch("/profile/edit", controller.edit_profile);
+
+router.delete("/profile/delete", controller.delete_profile);
 
 module.exports = router;

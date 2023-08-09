@@ -53,3 +53,17 @@ exports.post_profile = (data, callback) => {
     callback(rows);
   });
 };
+
+exports.edit_profile = (data, callback) => {
+  const query = `UPDATE user1 SET userid='${data.userid}',pw='${data.pw}', name='${data.name}' WHERE id=${data.id}`;
+  conn.query(query, (err, rows) => {
+    callback();
+  });
+};
+
+exports.delete_profile = (id, callback) => {
+  const query = `DELETE FROM user1 WHERE id=${id}`;
+  conn.query(query, (err, rows) => {
+    callback();
+  });
+};

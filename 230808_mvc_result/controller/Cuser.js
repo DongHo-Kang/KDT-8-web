@@ -41,3 +41,16 @@ exports.post_profile = (req, res) => {
     }
   });
 };
+
+exports.edit_profile = (req, res) => {
+  console.log(req.body);
+  User.edit_profile(req.body, () => {
+    res.send({ result: true });
+  });
+};
+
+exports.delete_profile = (req, res) => {
+  User.delete_profile(req.body.id, () => {
+    res.send({ result: true });
+  });
+};

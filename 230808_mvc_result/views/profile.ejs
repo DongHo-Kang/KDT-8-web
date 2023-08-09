@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <div>Profile Page</div>
+    <a href="/user">홈으로 이동</a>
+    <form name="form-profile">
+      <input type="hidden" id="id" value="<%= data.id%>" />
+      <!-- 우리는 이 값이 필요한데 사용자에게 보여줄 필요는 없는 경우 hidden 처리함. -->
+      <input type="text" id="user" value="<%= data.userid %>" /><br />
+      <input type="password" id="pw" value="<%= data.pw %>" /><br />
+      <input type="text" id="nickname" value="<%= data.name %>" /><br />
+      <button type="button" onclick="profileEdit()">수정</button>
+      <button type="button" onclick="profileDelete()">삭제</button>
+    </form>
+
+    <script>
+      function profileEdit() {
+        const form = document.forms["form-profile"];
+        axios({
+          method: "PATCH",
+          url: "/user/profile/edit",
+          data: {
+            id: Number(form.id.value),
+            userid: form.userid.value,
+            pw: form.pw.value,
+            name: form.nickname.value,
+          },
+        }).then((res) => {
+          console.log("res", res);
+          if (res.data.result) {
+            alert("회원정보가 수정되었습니다.");
+          }
+        });
+      }
+
+      function profileDelete() {
+        if (!confirm("삭제하시겠습니까?")) {
+          return;
+        }
+        const form = document.forms["form-profile"];
+        axios({
+          method: "DELETE",
+          url: "/user/profile/delete",
+          data: {
+            id: Number(form.id.value),
+          },
+        }).then((res) => {
+          if (res.data.result) {
+            alert("삭제완료되었습니다.");
+            window.location.href = "/user";
+          }
+        });
+      }
+    </script>
+  </body>
+</html>

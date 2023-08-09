@@ -33,7 +33,7 @@
         if (pw === checkPw) {
           axios({
             method: "POST",
-            url: "/user/signup",
+            url: "/user/signup", //엔드포인트 개념.
             data: {
               name: form.name.value,
               userId: form.userId.value,
