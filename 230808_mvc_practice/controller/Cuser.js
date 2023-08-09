@@ -5,9 +5,9 @@ exports.getSignUp = (req, res) => {
 };
 
 exports.postSignUp = (req, res) => {
-  console.log(req.body);
+  console.log("회원가입 Brower 데이터 받아옴req1: ", req.body);
   User.postSignUp(req.body, (result) => {
-    console.log("회원가입 정보: ", req.body);
+    console.log("회원가입 정보3: ", req.body);
     res.send({ result: result, msg: "회원가입 완료" });
   });
 };

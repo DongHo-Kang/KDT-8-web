@@ -27,9 +27,18 @@
     <script>
       function handleSignUp() {
         const form = document.forms["signup"];
+        const userId = form.userId.value;
         const name = form.name.value;
         const pw = form.pw.value;
         const checkPw = form.checkPw.value;
+        console.log(
+          "form전송(데이터 보내기): name",
+          name,
+          "userId",
+          userId,
+          "pw",
+          pw
+        );
         if (pw === checkPw) {
           axios({
             method: "POST",
@@ -42,7 +51,7 @@
           }).then((res) => {
             console.log("res", res);
             alert(`${name}님 환영합니다. 회원가입이 완료되었습니다.`);
-            window.location.reload();
+            // window.location.reload();
           });
         } else {
           alert("비밀번호가 일치하지 않습니다.");

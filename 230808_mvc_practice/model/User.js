@@ -16,6 +16,7 @@ conn.connect((err) => {
 });
 
 exports.postSignUp = (data, callback) => {
+  console.log("회원가입 Controller에서 받아옴 data2:", data);
   const query = `INSERT INTO login (userid, name, pw) VALUES ('${data.userId}','${data.name}','${data.pw}')`;
   conn.query(query, (err, rows) => {
     console.log("signup", rows);
