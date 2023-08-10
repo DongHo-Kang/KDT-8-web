@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <form name="user_form">
+      <fieldset>
+        <legend>로그인하기</legend>
+        <input type="text" id="userId" placeholder="아이디" /><br />
+        <input type="password" id="pw" placeholder="비밀번호" /><br />
+        <button type="button" onclick="login()">로그인</button>
+      </fieldset>
+    </form>
+
+    <script>
+      function login() {
+        const form = document.forms["user_form"];
+        axios({
+          method: "POST",
+          url: "/user/signin",
+          data: {
+            userId: form.userId.value,
+            pw: form.pw.value,
+          },
+        })
+          .then((res) => {
+            console.log("res", res);
+            if (res.data.result) {
+              alert(`${res.data.data.name}님, 환영합니다.`);
+              window.location.href = `/user/profile/${res.data.data.id}`;
+            } else {
+              alert("로그인 실패");
+              form.reset();
+            }
+          })
+          .catch((err) => {
+            alert("로그인 실패");
+            form.reset();
+            console.error("Error while sending request:", err);
+          });
+      }
+    </script>
+  </body>
+</html>
