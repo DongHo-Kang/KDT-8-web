@@ -1,5 +1,6 @@
 "use strict";
 
+//기본 설정
 const Sequelize = require("sequelize");
 const config = require(__dirname + "/../config/config.json")["development"];
 
@@ -10,13 +11,11 @@ const sequelize = new Sequelize(
   config.password,
   config
 );
+//여기까지
 
-//model값
-//const a = requeire('./Visitor')
-//const b = a()
-db.Visitor = require("./Visitor")(sequelize, Sequelize);
-//앞에는 접속정보
-//뒤에는 우리가 정의한 것 require("sequelize")
+//model
+//가져오기.
+db.User2 = require("./User2")(sequelize, Sequelize);
 
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;

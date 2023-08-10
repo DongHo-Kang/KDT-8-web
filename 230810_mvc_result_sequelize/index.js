@@ -8,24 +8,18 @@ app.set("views", "./views");
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use("/static", express.static(__dirname + "/static")); //CSS 관련
 
 //라우터
-app.get("/", (req, res) => {
-  res.render("index");
-});
+const userRouter = require("./routes/user");
+app.use("/user", userRouter);
 
-//라우터 분리
-const router = require("./routes"); //index는 생략 가능(./routes/index.js)
-app.use("/visitor", router); // '/visitor'로 처리하여서 넘긴다. 어디로? ./routes/index.js 로.
-
-//오류 처리
+//404
 app.use("*", (req, res) => {
   res.render("404");
 });
-
+//
 db.sequelize.sync({ force: false }).then(() => {
-  //force: false => 테이블이 없으면 생성
-  //force: true => 테이블 무조건 생성(만약 DB가 있다면 다 삭제하고 다시 생성7)
   app.listen(PORT, () => {
     console.log(`http://localhost:${PORT}`);
   });

@@ -1,6 +1,6 @@
 //visitor에 대한 테이블 정의
 const Visitor = function (sequelize, DataTypes) {
-  //Sequelize는 models/index.js에 있는 sequelize
+  //Sequelize는 models/index.js에 있는 sequelize 접속정보
   //DataTypes는 models/index.js에 있는 Sequelize
 
   const model = sequelize.define(
@@ -19,12 +19,12 @@ const Visitor = function (sequelize, DataTypes) {
       comment: {
         type: DataTypes.TEXT("medium"),
       },
-    },
-    {
-      tableName: "visitor",
-      freezeTableName: true,
-      timestamps: false,
     }
+    // {
+    //   tableName: "visitor",
+    //   freezeTableName: true,
+    //   timestamps: false,
+    // }
   );
   return model;
 };
