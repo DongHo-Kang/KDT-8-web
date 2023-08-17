@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      (function () {
+        //즉시 실행 함수
+        localStorage.setItem("id", "kdt8"); //localStorage 저장
+        const local = localStorage.getItem("id"); //localstorage 가져오기
+        console.log(local);
+        localStorage.clear(); //localstorage 초기화
+      })();
+    </script>
+  </body>
+</html>
