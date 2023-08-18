@@ -35,10 +35,11 @@
           if (res.data.result) {
             //result의 값이 true 일때
             alert("로그인 성공");
-
             const form_profile = document.forms["form_profile"];
-            form_profile.profile.value = form.userid.value;
-            form_profile.submit();
+            // form_profile.profile.value = form.userid.value;
+            // form_profile.submit();
+            localStorage.setItem("login", res.data.data.token);
+            window.location.href = "/user";
           } else {
             // window.location.href = "/user/signin";
             // window.location.reload();

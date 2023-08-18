@@ -15,12 +15,9 @@ router.get("/signin", controller.signin);
 router.post("/signin", controller.post_signin);
 
 router.post("/profile", controller.post_profile);
-
-router.patch("/profile/edit", controller.edit_profile);
-
-router.delete("/profile/delete", controller.delete_profile);
-
-//
-router.get("/findall", controller.findall);
-
+router.get("/profile", controller.profile);
 module.exports = router;
+
+// router.patch("/profile/edit", controller.edit_profile);
+
+// router.delete("/profile/delete", controller.delete_profile);

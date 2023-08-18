@@ -24,7 +24,7 @@
             method: "POST",
             url: "/token",
             headers: {
-              Authorization: `Bear ${token}`,
+              Authorization: `Bearer ${token}`,
             },
           });
           if (res.data.result) {
