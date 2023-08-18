@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>로그인</h1>
+    <form name="form_login">
+      <label for="userid">ID</label>
+      <input type="text" id="userid" /><br />
+      <label for="pw">PW</label>
+      <input type="text" id="pw" /><br />
+      <button type="button" onclick="login()">로그인</button>
+    </form>
+    <form action="/user/profile" method="post" name="form_profile">
+      <!-- hidden폼은 사람들 눈에는 보이지 않는 input 값 -->
+      <input type="hidden" name="profile" />
+    </form>
+
+    <script>
+      function login() {
+        const form = document.forms["form_login"];
+        axios({
+          method: "POST",
+          url: "/user/signin",
+          data: {
+            userid: form.userid.value,
+            pw: form.pw.value,
+          },
+        }).then((res) => {
+          if (res.data.result) {
+            //result의 값이 true 일때
+            alert("로그인 성공");
+
+            const form_profile = document.forms["form_profile"];
+            form_profile.profile.value = form.userid.value;
+            form_profile.submit();
+          } else {
+            // window.location.href = "/user/signin";
+            // window.location.reload();
+            alert("로그인 실패");
+            form.reset();
+          }
+          console.log("res", res);
+        });
+      }
+    </script>
+  </body>
+</html>

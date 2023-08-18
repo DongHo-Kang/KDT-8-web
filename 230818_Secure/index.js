@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express();
 const PORT = 8000;
+require("dotenv").config(); //env에 있는 파일 읽어드려라.
 
 let hash = "";
 //ejs
@@ -11,6 +12,9 @@ app.use(express.json());
 
 //router
 app.get("/", (req, res) => {
+  console.log(process.env.NAME);
+  console.log(process.env.STATUS);
+  console.log(process.env.NODE_ENV);
   res.render("index");
 });
 app.post("/hash", (req, res) => {
