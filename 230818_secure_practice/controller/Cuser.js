@@ -108,28 +108,3 @@ const bcryptPassword = (password) => {
 const comparePassword = (password, dbPassword) => {
   return bcrypt.compareSync(password, dbPassword);
 };
-
-// exports.edit_profile = (req, res) => {
-//   const { userid, pw, name, id } = req.body;
-//   //구조분해 할당
-//   models.secureUser
-//     .updata(
-//       /*set*/ { userid, pw, name },
-//       /*where*/ {
-//         where: {
-//           id,
-//         },
-//       }
-//     )
-//     .then((result) => {
-//       console.log("result", result);
-//       res.send({ result: true });
-//     });
-// };
-
-// exports.delete_profile = (req, res) => {
-//   models.secureUser.destory({ where: { id: req.body.id } }).then((result) => {
-//     console.log("result", result);
-//     res.send({ result: true });
-//   });
-// };
