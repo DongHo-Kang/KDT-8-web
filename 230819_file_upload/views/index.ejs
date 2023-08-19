@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>파일 업로드</title>
+  </head>
+  <body>
+    <h1>파일 업로드 하기</h1>
+
+    <!-- 일반 폼 전송 -->
+    <h2>하나의 input에 하나의 파일 업로드</h2>
+    <form action="/upload" method="post" enctype="multipart/form-data">
+      <!--action: 데이터를 보낼 곳-->
+      <input type="file" name="userfile" /> <br />
+      <input type="text" name="title" /><br />
+      <button type="submit">업로드</button>
+    </form>
+
+    <!--파일 여러개 업로드 -->
+    <h2>파일 여러개 업로드</h2>
+    <form action="/upload/array" method="post" enctype="multipart/form-data">
+      <input type="file" name="userfiles" multiple /><br />
+      <input type="text" name="title" /> <br />
+      <button type="submit">제출하기</button>
+    </form>
+
+    <!--파일 여러개 업로드 -->
+    <h2>파일 여러개 업로드</h2>
+    <form action="/upload/fields" method="post" enctype="multipart/form-data">
+      <input type="file" name="userfiles1" multiple /><br />
+      <input type="text" name="title1" /> <br /><input
+        type="file"
+        name="userfiles2"
+        multiple
+      /><br />
+      <input type="text" name="title2" /> <br />
+      <button type="submit">제출하기</button>
+    </form>
+
+    <!--axio동적 파일 업로드-->
+    <input type="file" , name="dynamic-userfile" id="dynamic-file" /><br />
+    <button type="button" onclick="fileUpload()">업로드</button>
+    <br />
+    <img src="" width="200" />
+  </body>
+  <script>
+    function fileUpload() {
+      const formData = new FormData();
+      const file = document.getElementById("dynamic-userfile");
+      formData.append("dynamic-userfile", file.files[0]);
+      axios({
+        method: "POST",
+        url: "/dynamicFile",
+        data: formData,
+        headers: {
+          "Content-Type": "multipart/form-data",
+        }.then((res) => {
+          console.log(res);
+          console.log(res.data);
+          console.log(res.data.path);
+          document.querySelector("img").src = res.data.path;
+        }),
+      });
+    }
+  </script>
+</html>
