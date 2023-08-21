@@ -1,22 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Document</title>
-    </head>
-    <body>
-        <form>
-            <label for="name">이름</label>
-            <input type="text" id="name" required />
-            <br />
-            성별
-            <input type="radio" name="gender" value="남자" id="male" />
-            <label for="male">남자</label>
-            <input type="radio" name="gender" value="여자" id="female" />
-            <label for="female">여자</label>
-            <br />
-            <button type="submit">제출</button><br />
-        </form>
-    </body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form onsubmit="postSubmit(event)">
+      <label for="name">이름</label>
+      <input type="text" id="name" required />
+      <br />
+      성별
+      <input type="radio" name="gender" value="남자" id="male" />
+      <label for="male">남자</label>
+      <input type="radio" name="gender" value="여자" id="female" />
+      <label for="female">여자</label>
+      <br />
+      <button type="submit">제출</button><br />
+    </form>
+    <script>
+      function postSubmit(event) {
+        console.log(event);
+        event.preventDefault(); //기본 제출 동작을 막음
+      }
+    </script>
+  </body>
 </html>
