@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1><%= title%></h1>
+    <ul>
+      <li>
+        <%= userInfo.username%>님 안녕하세요. <br />
+        회원님의 성별은 <%= userInfo.gender %>이시고 <%=
+        userInfo.birthYear%>년<%= userInfo.birthMonth%>월 <%=
+        userInfo.birthDay%>일 입니다. <br />
+        취미는 <%= userInfo.hobby%>입니다. <br />
+        <% if(userInfo.color && userInfo.number) { %> 좋아하는 색은 <%=
+        userInfo.color%>이고, <%= userInfo.number%>를 좋아합니다. <% } %>
+      </li>
+      <a href="/">홈으로 이동</a>
+    </ul>
+  </body>
+</html>
