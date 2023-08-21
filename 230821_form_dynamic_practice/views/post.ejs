@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>POST 실습</h1>
+    <form>
+      <label for="username">아이디</label>
+      <input type="text" id="username" required />
+      <br />
+      <label for="password">패쓰워드</label>
+      <input type="password" id="password" required />
+      <br />
+      <button type="button" onclick="login()">로그인</button>
+    </form>
+    <br />
+    <div class="result"></div>
+    <script>
+      const resultBox = document.querySelector(".result");
+      async function login() {
+        const data = {
+          username: document.getElementById("username").value,
+          password: document.getElementById("password").value,
+        };
+        try {
+          const result = await axios({
+            method: "POST",
+            url: "/resultPost",
+            data,
+          });
+          console.log(result);
+          resultBox.textContent = result.data;
+        } catch (error) {
+          console.log("err", error);
+        }
+      }
+    </script>
+  </body>
+</html>
