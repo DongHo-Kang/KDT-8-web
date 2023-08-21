@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h4>GET</h4>
+    <form action="/getForm" method="GET">
+      <input type="text" placeholder="id" name="id" /><br />
+      <input type="password" placeholder="pw" name="pw" /> <br />
+      <button type="submit">제출</button>
+    </form>
+    <hr />
+    <h4>POST</h4>
+    <form action="/postForm" method="POST">
+      <input type="text" placeholder="id" name="id" /><br />
+      <input type="password" placeholder="pw" name="pw" /> <br />
+      <button type="submit">제출</button>
+    </form>
+    <!-- readonly: 선택안됨. 백엔드 데이터 전송 가능.
+    disabled: 선택안됨. 백엔드 데이터 전송 안됨. -->
+  </body>
+</html>
