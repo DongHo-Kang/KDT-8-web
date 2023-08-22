@@ -21,6 +21,9 @@ app.post("/resultPost", (req, res) => {
   console.log(req.body);
   if (userInfo.id === req.body.username) {
     if (userInfo.pw === req.body.password) {
+      // // res.json: application/json 형태로 응답할때 사용
+      // //json() 함수안에는 객체가 꼭 와야 함.
+      // res.json({result: true, userInfo:{ id: userInfo.username, pw: userInfo.pw}})
       res.send(`${userInfo.id}님 환영합니다.`);
     } else {
       res.send("비밀번호가 틀립니다.");
