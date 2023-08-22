@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>회원 리스트</h1>
+    <ul class="user-list">
+      <% for(let i= 0; i < lists.length; i++) { %>
+      <li>
+        <b><%= lists[i].id %></b>
+        <b><%= lists[i].userName %></b>
+        <b><%= lists[i].gender %></b>
+        <b><%= lists[i].major %></b>
+      </li>
+      <% } %>
+    </ul>
+    <div class="result"></div>
+    <form>
+      id<input type="text" id="id" /> <br />
+      이름<input type="text" id="userName" /><br />
+      성별<input type="text" id="gender" /> <br />
+      전공<input type="text" id="major" /> <br />
+      <button type="button" onclick="addlists()">저장</button>
+    </form>
+    <a href="/">홈으로 이동</a>
+  </body>
+  <script>
+    async function addlists() {
+      const data = {
+        id: document.getElementById("id").value,
+        userName: document.getElementById("userName").value,
+        gender: document.getElementById("gender").value,
+        major: document.getElementById("major").value,
+      };
+      console.log("data", data);
+      try {
+        const result = await axios({
+          method: "POST",
+          url: "/lists",
+          data,
+        });
+        console.log("receive", result);
+        const userList = document.querySelector(".user-list");
+        const newUser = document.createElement("li");
+        newUser.innerHTML = `
+        <b>${data.id}</b>
+        <b>${data.userName}</b>
+        <b>${data.gender}</b>
+        <b>${data.major}</b>
+      `;
+        userList.appendChild(newUser);
+      } catch (error) {
+        console.log("err", error);
+      }
+    }
+  </script>
+</html>

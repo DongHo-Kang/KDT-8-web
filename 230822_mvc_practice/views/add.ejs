@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form>
+      <input type="text" id="id" />id <br />
+      <input type="text" id="userName" />이름<br />
+      <input type="text" id="gender" />성별 <br />
+      <input type="text" id="major" />전공 <br />
+      <button type="button" onclick="addlists()">저장</button>
+    </form>
+  </body>
+  <script>
+    async function addlists() {
+      const data = {
+        id: document.getElementById("id").value,
+        userName: document.getElementById("userName").value,
+        gender: document.getElementById("gender").value,
+        major: document.getElementById("major").value,
+      };
+      console.log("data", data);
+      try {
+        const result = await axios({
+          method: "POST",
+          url: "/addlist",
+          data,
+        });
+        document.querySelector(".result").textContent = result.data;
+        window.location.href = "/list";
+      } catch (error) {}
+    }
+  </script>
+</html>
