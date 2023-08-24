@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>회원정보 조회 및 수정</h1>
+    <form>
+      ID<input type="text" id="userid" placeholder="ID" /><br />
+      비밀번호<input type="password" id="pw" placeholder="PW" /><br />
+      이름<input type="text" id="name" placeholder="NAME" /><br />
+
+      <button type="button" onclick="updata()">회원수정</button>
+    </form>
+    <script>
+      const id = localStorage.getItem("id");
+
+      axios({
+        method: "POST",
+        url: "/detail",
+        data: { id: id },
+      }).then((res) => {
+        console.log(res);
+        document.getElementById("userid").value = res.data.data.userid;
+        document.getElementById("name").value = res.data.data.name;
+        document.getElementById("pw").value = res.data.data.pw;
+      });
+
+      async function updata() {
+        const form = await axios({
+          method: "POST",
+          url: "/updata",
+          data: {
+            id: id,
+            userid: document.getElementById("userid").value,
+            name: document.getElementById("name").value,
+            pw: document.getElementById("pw").value,
+          },
+        }).then((res) => {
+          alert("회원정보가 수정되었습니다.");
+          localStorage.clear();
+          window.location.href = "/";
+        });
+      }
+    </script>
+  </body>
+</html>
