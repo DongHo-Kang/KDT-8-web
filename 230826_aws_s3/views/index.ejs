@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <form onsubmit="fileUpload(event)">
+      <input type="file" id="files" multiple /><br />
+      <button type="submit">업로드</button>
+    </form>
+    <br />
+    <div class="result"></div>
+    <script>
+      const resultBox = document.querySelector(".result");
+
+      async function fileUpload(e) {
+        e.preventDefaule(); //새로고침 막음
+        //파일에 접근
+        const file = document.querySelector("#files");
+        console.log(file.files);
+        //폼 데이터 생성
+        const formData = new FormData();
+        //multiple 반복문 사용
+        for (let i = 0; i < file.files.length; i++) {
+          formData.append("files", file.files[i]);
+        }
+
+        try {
+          const res = await axios({
+            method: "POST",
+            url: "/uploads",
+            data: formData,
+            headers: {
+              "Content-Type": "multipart/form-data",
+            },
+          });
+          console.log("res:", res.data);
+          res.data.forEach((element) => {
+            const img = document.createElement("img");
+            img.src = element.location; // aws의 경로는 location
+            img.style.width = "500px";
+            resultBox, appendChild(img);
+          });
+        } catch (err) {
+          console.log(err);
+        }
+      }
+    </script>
+  </body>
+</html>
