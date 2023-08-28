@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const socket = new WebSocket("ws://localhost:8000");
+      //서버에 연결
+      socket.addEventListener("open", (event) => {
+        console.log("서버에 연결되었습니다.");
+        socket.send("메세지가 간다.");
+      });
+      //메세지 주고 받기
+      socket.addEventListener("message", (event) => {
+        console.log(event);
+        console.log(`서버로부터 받은 메시지: ${event.data}`);
+      });
+      //오류 처리
+      socket.addEventListener("error", (event) => {
+        console.log(`오류가 발생하였습니다.`, event.console.error);
+      });
+      //종료
+      socket.addEventListener("close", (event) => {
+        console.log("서버와 연결이 종료됨");
+      });
+    </script>
+  </body>
+</html>
