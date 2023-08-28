@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <ul></ul>
+        <form id="chat">
+            <input type="text" id="user" placeholder="닉네임" />
+            <input type="text" id="message" placeholder="채팅내용" /><br />
+            <button>채팅</button>
+        </form>
+        <script>
+            const socket = new WebSocket('ws://localhost:8000');
+            //form가져오기
+            const chatForm = document.querySelector('#chat');
+            //ul가져오기
+            const ul = document.querySelector('ul');
+            //서버에 연결
+            socket.addEventListener('open', (event) => {
+                socket.send(JSON.stringify({ message: 'Hello, Server', user: 'client' }));
+                console.log('서버에 연결되었습니다.');
+            });
+            //메세지 주고 받음
+            socket.addEventListener('message', (event) => {
+                console.log(event.data);
+                // console.log(`서버로부터 받은 메세지: ${event.data}`);
+                const li = document.createElement('li');
+                li.textContent = event.data;
+                ul.appendChild(li);
+            });
+            //오류발생
+            socket.addEventListener('error', (event) => {
+                console.log('오류가 발생하였습니다', event.error);
+            });
+            //종료
+            socket.addEventListener('close', (event) => {
+                console.log('서버와 연결이 종료됨');
+            });
+
+            ////////////////form이벤트//////////////////
+            chatForm.addEventListener('submit', (event) => {
+                event.preventDefault();
+                const user = chatForm.querySelector('#user');
+                const msg = chatForm.querySelector('#message');
+                //서버가 모두 nodejs가 아니기때문에 서버로 보내는 데이터는 문자열로 보내야합니다
+                socket.send(JSON.stringify({ user: user.value, message: msg.value }));
+                msg.value = '';
+            });
+        </script>
+    </body>
+</html>
