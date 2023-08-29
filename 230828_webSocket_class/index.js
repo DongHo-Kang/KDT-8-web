@@ -34,6 +34,9 @@ wss.on("connection", (socket) => {
     sockets.forEach((elem) => {
       elem.send(`${msg.user}: ${msg.message}`);
     });
+    // wss.clients.forEach((elem) => {
+    //     elem.send(`${msg.user}: ${msg.message}`);
+    //   });  이 방법도 가능
   });
   //오류
   socket.on("error", (err) => {
