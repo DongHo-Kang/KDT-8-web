@@ -40,28 +40,41 @@
       socket.on("userjoin", (message) => {
         console.log(message);
       });
-      // socket.on("receive", (message) => {
+      // socket.on("send", (message) => {
       //   const p = document.createElement("p"); //p태그 생성
       //   p.textContent = message;
       //   p.classList.add("right-align"); // 오른쪽 정렬 클래스 추가
       //   space.appendChild(p);
       // });
-
       socket.on("send", (message) => {
-        console.log(message);
-        const p = document.createElement("p");
-        p.textContent = `${message.name}: ${message.msg}`;
-        p.classList.add("left-align"); // 왼쪽 정렬 클래스 추가
-        space.appendChild(p);
+        if (message.name === Username) {
+          const p = document.createElement("p");
+          p.textContent = `${message.name}: ${message.msg}`;
+          p.classList.add("right-align"); // 오른쪽 정렬 클래스 추가
+          space.appendChild(p);
+        } else {
+          const p = document.createElement("p");
+          p.textContent = `${message.name}: ${message.msg}`;
+          p.classList.add("left-align"); // 왼쪽 정렬 클래스 추가
+          space.appendChild(p);
+        }
       });
+
+      // socket.on("receive", (message) => {
+      //   console.log(message);
+      //   const p = document.createElement("p");
+      //   p.textContent = `${message.name}: ${message.msg}`;
+      //   p.classList.add("left-align"); // 왼쪽 정렬 클래스 추가
+      //   space.appendChild(p);
+      // });
 
       chatForm.addEventListener("submit", (e) => {
         e.preventDefault();
         const msg = chatForm.querySelector("#message");
-        const p = document.createElement("p"); //p태그 생성
-        p.textContent = `${Username}:${msg.value}`;
-        p.classList.add("right-align"); // 오른쪽 정렬 클래스 추가
-        space.appendChild(p);
+        // const p = document.createElement("p"); //p태그 생성
+        // p.textContent = `${Username}:${msg.value}`;
+        // p.classList.add("right-align"); // 오른쪽 정렬 클래스 추가
+        // space.appendChild(p);
         socket.emit("message", { name: Username, msg: msg.value });
         msg.value = "";
       });
