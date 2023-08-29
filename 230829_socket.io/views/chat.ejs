@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="/socket.io/socket.io.js"></script>
+
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="space"></div>
+    <form id="chat">
+      <input type="text" id="message" placeholder="채팅내용" />
+      <button>채팅</button>
+    </form>
+    <script>
+      const chatForm = document.querySelector("#chat");
+      const space = document.querySelector("#space");
+      const socket = io();
+      const chatroom = prompt("채팅방을 입력하세요. ");
+      socket.emit("join", chatroom);
+
+      socket.on("userjoin", (message) => {
+        console.log(message);
+      });
+      socket.on("chat", (message) => {
+        const p = document.createElement("p"); //p태그 생성
+        p.textContent = message;
+        space.appendChild(p);
+      });
+
+      chatForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const msg = chatForm.querySelector("#message");
+        socket.emit("message", msg.value);
+        msg.value = "";
+      });
+    </script>
+  </body>
+</html>
