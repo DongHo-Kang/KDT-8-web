@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="/socket.io/socket.io.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <div>Socket IO</div>
+    <ul></ul>
+    <form id="chat">
+      <input type="text" id="user" placeholder="사용자명" />
+      <input type="text" id="message" placeholder="채팅" /><br />
+      <button>채팅</button>
+    </form>
+    <script>
+      const chatForme = document.querySelector("chat");
+      const ul = document.querySelector("ul");
+      //io()함수가 클라이언트 소켓생성 및 연결 설정
+      const socket = io();
+      //new_message라는 이벤트를 만들고 hello, Server를 보낸다.
+      //몇개를 보내도 상관없다. 객체도 가능
+      socket.emit(
+        "new_message",
+        "hello, Server",
+        true,
+        10,
+        "hahaha",
+        { name: "client", message: "hoho" },
+        (res) => {
+          console.log(res);
+        }
+      );
+    </script>
+  </body>
+</html>
