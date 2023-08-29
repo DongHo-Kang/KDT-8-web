@@ -19,11 +19,16 @@ app.get("/", (req, res) => {
 //==========소켓=========//
 //받아오는 갯수가 같아야 한다.
 io.on("connection", (socket) => {
-  socket.on("new_message", (arg, val1, val2, val3, val4, cb) => {
-    console.log(arg, val1, val2, val3, val4);
-    cb(arg, val1, val2, val3, val4);
-    //hello, Server를 받아서 콘솔에 출력
-    //다시 callback함수를 통해 클라이언트로 보낸다.
+  //   socket.on("new_message", (arg, val1, val2, val3, val4, cb) => {
+  //     console.log(arg, val1, val2, val3, val4);
+  //     cb(arg, val1, val2, val3, val4);
+  //     //hello, Server를 받아서 콘솔에 출력
+  //     //다시 callback함수를 통해 클라이언트로 보낸다.
+  //   });
+  //=========채팅====//
+  socket.on("new_message", (arg, cb) => {
+    console.log(arg);
+    cb(arg);
   });
 });
 

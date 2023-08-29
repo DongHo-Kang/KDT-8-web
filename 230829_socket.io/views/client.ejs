@@ -15,23 +15,49 @@
       <button>채팅</button>
     </form>
     <script>
-      const chatForme = document.querySelector("chat");
+      const chatForm = document.querySelector("#chat");
       const ul = document.querySelector("ul");
       //io()함수가 클라이언트 소켓생성 및 연결 설정
       const socket = io();
       //new_message라는 이벤트를 만들고 hello, Server를 보낸다.
       //몇개를 보내도 상관없다. 객체도 가능
+      //   socket.emit(
+      //     "new_message",
+      //     "hello, Server",
+      //     true,
+      //     10,
+      //     "hahaha",
+      //     { name: "client", message: "hoho" },
+      //     (res) => {
+      //       console.log(res);
+      //     }
+      //   );
+
+      //======채팅=====//
       socket.emit(
         "new_message",
-        "hello, Server",
-        true,
-        10,
-        "hahaha",
-        { name: "client", message: "hoho" },
-        (res) => {
-          console.log(res);
-        }
+        { name: "client", message: "서버접속" },
+        () => {}
       );
+      //폼 이벤트
+      chatForm.addEventListener("submit", (event) => {
+        event.preventDefault();
+        const user = chatForm.querySelector("#user");
+        const message = chatForm.querySelector("#message");
+        socket.emit(
+          "new_message",
+          {
+            name: user.value,
+            message: message.value,
+          },
+          (res) => {
+            console.log(res);
+            const li = document.createElement("li");
+            li.textContent = `${res.name}: ${res.message}`;
+            ul.appendChild(li);
+          }
+        );
+      });
     </script>
   </body>
 </html>
