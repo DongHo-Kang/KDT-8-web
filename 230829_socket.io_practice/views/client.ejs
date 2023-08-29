@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="/socket.io/socket.io.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <h3>Hello World</h3>
+    <br />
+    <button type="submit" onclick="hello()">hello</button>
+    <button type="submit" onclick="study()">study</button>
+    <button type="submit" onclick="bye()">bye</button><br />
+    <ul>
+      <li id="message"></li>
+    </ul>
+    <script>
+      const ul = document.querySelector("ul");
+      //io()함수가 클라이언트 소켓생성 및 연결 설정
+      const messageLi = document.getElementById("message");
+
+      function updateMessage(message) {
+        console.log(message);
+        messageLi.textContent = `${message.eng}: ${message.kor}`;
+      }
+
+      const socket = io();
+      function hello() {
+        socket.emit("hello", { eng: "hello", kor: "안녕하세요." }, (res) => {
+          console.log(res);
+          updateMessage(res);
+        });
+      }
+      function study() {
+        socket.emit("study", { eng: "study", kor: "공부합시다." }, (res) => {
+          console.log(res);
+          updateMessage(res);
+        });
+      }
+      function bye() {
+        socket.emit("bye", { eng: "bye", kor: "잘가~." }, (res) => {
+          console.log(res);
+          updateMessage(res);
+        });
+      }
+    </script>
+  </body>
+</html>
