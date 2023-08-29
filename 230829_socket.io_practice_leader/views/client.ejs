@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script src="/socket.io/socket.io.js"></script>
+        <title>Document</title>
+    </head>
+    <body>
+        <div>Socket IO</div>
+        <!-- <ul></ul>
+        <form id="chat">
+            <input type="text" id="user" placeholder="사용자명" />
+            <input type="text" id="message" placeholder="채팅내용" /><br />
+            <button>채팅</button>
+        </form> -->
+        <button onclick="hello()">hello</button>
+        <button onclick="study()">study</button>
+        <button onclick="bye()">bye</button>
+        <p id="from-data"></p>
+
+        <script>
+            // 폼전송 소켓연습
+            // const chatForm = document.querySelector('#chat');
+            // const ul = document.querySelector('ul');
+            // socket.emit('new_message', { name: 'client', message: '서버접속' }, () => {});
+            // //폼이벤트
+            // chatForm.addEventListener('submit', (event) => {
+            //     event.preventDefault();
+            //     const user = chatForm.querySelector('#user');
+            //     const message = chatForm.querySelector('#message');
+            //     socket.emit('new_message', { name: user.value, message: message.value }, (res) => {
+            //         console.log('res', res);
+            //         const li = document.createElement('li');
+            //         li.textContent = `${res.name}: ${res.message}`;
+            //         ul.appendChild(li);
+            //     });
+            // });
+            //io()가 클라이언트 소켓생성 및 연결 설정
+            const socket = io();
+            const data = document.querySelector('#from-data');
+            function hello() {
+                socket.emit('hello', { name: 'client', message: 'hello' });
+                socket.on('cbHello', (res) => {
+                    msg(res);
+                });
+            }
+            function study() {
+                socket.emit('study', { name: 'client', message: 'study' });
+                socket.on('cbStudy', (res) => {
+                    msg(res);
+                });
+            }
+            function bye() {
+                socket.emit('bye', { name: 'client', message: 'bye' });
+                socket.on('cbBye', (res) => {
+                    msg(res);
+                });
+            }
+            function msg(res) {
+                data.textContent = `${res.name} : ${res.message}`;
+            }
+        </script>
+    </body>
+</html>
