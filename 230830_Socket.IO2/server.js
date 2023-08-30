@@ -51,7 +51,7 @@ io.on("connection", (socket) => {
     socket.room = roomName;
     socket.user = userName;
 
-    socket.to(roomName).emit("notice", `${socket.id}님이 입장하셨습니다`);
+    socket.to(roomName).emit("notice", `${socket.user}님이 입장하셨습니다`);
 
     //채팅방 목록 갱신
     if (!roomList.includes(roomName)) {
