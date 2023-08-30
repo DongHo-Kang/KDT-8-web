@@ -20,17 +20,42 @@ app.get("/chat", (req, res) => {
   res.render("chat");
 });
 
+function getUsersInRoom(room) {
+  const users = [];
+  console.log(io.sockets);
+  const clients = io.sockets.adapter.rooms.get(room);
+  if (clients) {
+    clients.forEach((socketId) => {
+      const userSocket = io.sockets.sockets.get(socketId);
+      users.push(userSocket);
+    });
+  }
+  return users;
+}
+const roomList = [];
+
 //==========소켓=========//
 //받아오는 갯수가 같아야 한다.
 io.on("connection", (socket) => {
   console.log("id", socket.id);
   console.log("조인전", socket.rooms);
-  socket.on("join", (chatroom) => {
+  socket.on("join", (chatroom, username) => {
     socket.join(chatroom);
     socket.room = chatroom; //socket은 객체 형태라서 socket.room에 지정.
+    socket.name = username;
     console.log("조인후", socket.rooms);
     //broadcast 포함시 나를 제외한 전체 사용자에게 메시지 전달
-    socket.broadcast.to(chatroom).emit("userjoin", `사용자가 입장하셨습니다.`);
+    socket.broadcast
+      .to(chatroom)
+      .emit("userjoin", `${socket.name}가 입장하셨습니다.`);
+    //채팅방 목록 갱신
+    if (!roomList.includes(chatroom)) {
+      roomList.push(chatroom);
+      io.emit("roomList", roomList);
+    }
+    const usersInRoom = getUsersInRoom(chatroom);
+    io.to(chatroom).emit("userList", usersInRoom);
+    cb();
   });
   socket.on("message", (message) => {
     console.log(message);

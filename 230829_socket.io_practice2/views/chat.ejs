@@ -26,6 +26,7 @@
   <body>
     <div id="space"></div>
     <form id="chat">
+      <select id="userList"></select>
       <input type="text" id="message" placeholder="채팅내용" />
       <button>채팅</button>
     </form>
@@ -35,17 +36,26 @@
       const socket = io();
       const chatroom = prompt("채팅방을 입력하세요. ");
       const Username = prompt("이름을 입력하세요. ");
-      socket.emit("join", chatroom);
+      socket.emit("join", chatroom, Username);
 
       socket.on("userjoin", (message) => {
         console.log(message);
+        const p = document.createElement("p");
+        p.textContent = message;
+        space.appendChild(p);
       });
-      // socket.on("send", (message) => {
-      //   const p = document.createElement("p"); //p태그 생성
-      //   p.textContent = message;
-      //   p.classList.add("right-align"); // 오른쪽 정렬 클래스 추가
-      //   space.appendChild(p);
-      // });
+
+      //사용자 리스트
+      socket.on("userList", (userLists) => {
+        console.log(userLists);
+        const lists = document.querySelector("#userList");
+        lists.textContent = "";
+        let option = `<option value="all">전체</option>`;
+        for (let i of userLists) {
+          options += `<option value="${i.key}">${i.name}</option>`;
+        }
+        lists.innerHTML = option;
+      });
       socket.on("send", (message) => {
         if (message.name === Username) {
           const p = document.createElement("p");
@@ -60,21 +70,9 @@
         }
       });
 
-      // socket.on("receive", (message) => {
-      //   console.log(message);
-      //   const p = document.createElement("p");
-      //   p.textContent = `${message.name}: ${message.msg}`;
-      //   p.classList.add("left-align"); // 왼쪽 정렬 클래스 추가
-      //   space.appendChild(p);
-      // });
-
       chatForm.addEventListener("submit", (e) => {
         e.preventDefault();
         const msg = chatForm.querySelector("#message");
-        // const p = document.createElement("p"); //p태그 생성
-        // p.textContent = `${Username}:${msg.value}`;
-        // p.classList.add("right-align"); // 오른쪽 정렬 클래스 추가
-        // space.appendChild(p);
         socket.emit("message", { name: Username, msg: msg.value });
         msg.value = "";
       });
