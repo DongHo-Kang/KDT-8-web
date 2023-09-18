@@ -94,60 +94,70 @@ function App() {
     { id: 4, name: "Bob", age: 18, vip: false },
     { id: 5, name: "Charlie", age: 35, vip: true },
   ];
+
+  //단축평가
+  const loading = true;
   return (
     <>
-      <h1 style={{ backgroundColor: "black", color: "white" }}>Hello React!</h1>
-      <div style={style}>리액트 시작</div>
-      {/* <div>리액트 시작</div> */}
-      <input type="text" />
-      <div>{flag ? <h1>true입니다.</h1> : <h1>flase입니다.</h1>}</div>
-      <div>{txt}</div>
-      <br></br>
+      {/* 단축평가 */}
+      {loading && (
+        <>
+          <h1 style={{ backgroundColor: "black", color: "white" }}>
+            Hello React!
+          </h1>
+          <div style={style}>리액트 시작</div>
+          {/* <div>리액트 시작</div> */}
+          <input type="text" />
+          <div>{flag ? <h1>true입니다.</h1> : <h1>flase입니다.</h1>}</div>
+          <div>{txt}</div>
+          <br></br>
 
-      {/* 실습1 */}
-      <div>
-        이것은 div입니다.
-        <h3>이것은 div안에 있는 h3태그입니다.</h3>
-      </div>
-      <div>{cal === 8 ? <h1>정답입니다!</h1> : <h1>오답입니다!</h1>}</div>
+          {/* 실습1 */}
+          <div>
+            이것은 div입니다.
+            <h3>이것은 div안에 있는 h3태그입니다.</h3>
+          </div>
+          <div>{cal === 8 ? <h1>정답입니다!</h1> : <h1>오답입니다!</h1>}</div>
 
-      {/* 실습2 */}
-      <div>제 반려 동물의 이름은 {name}입니다.</div>
-      <div>
-        {name}는 {animal}입니다.
-      </div>
-      {/* 실습3 */}
-      <div style={divStyle}>
-        <div style={test}> {title}</div>
-        아이디:
-        <input type="text" style={input} />
-        <br></br>
-        비밀번호:
-        <input type="text" style={input} />
-      </div>
+          {/* 실습2 */}
+          <div>제 반려 동물의 이름은 {name}입니다.</div>
+          <div>
+            {name}는 {animal}입니다.
+          </div>
+          {/* 실습3 */}
+          <div style={divStyle}>
+            <div style={test}> {title}</div>
+            아이디:
+            <input type="text" style={input} />
+            <br></br>
+            비밀번호:
+            <input type="text" style={input} />
+          </div>
 
-      {/* 실습4 */}
-      <div style={divStyle1}>
-        <div style={red}></div>
-        <div style={orange}></div>
-        <div style={yellow}></div>
-        <div style={green}></div>
-        <div style={blue}></div>
-        <div style={navy}></div>
-        <div style={purple}></div>
-      </div>
+          {/* 실습4 */}
+          <div style={divStyle1}>
+            <div style={red}></div>
+            <div style={orange}></div>
+            <div style={yellow}></div>
+            <div style={green}></div>
+            <div style={blue}></div>
+            <div style={navy}></div>
+            <div style={purple}></div>
+          </div>
 
-      {/* map() */}
-      {lists.map((value, index) => {
-        return <div key={index}>Hello {value}</div>;
-      })}
+          {/* map() */}
+          {lists.map((value, index) => {
+            return <div key={index}>Hello {value}</div>;
+          })}
 
-      {/* 실습5 */}
-      {users
-        .filter((user) => user.vip)
-        .map((user, index) => (
-          <div key={index}>- {user.name}</div>
-        ))}
+          {/* 실습5 */}
+          {users
+            .filter((user) => user.vip)
+            .map((user, index) => (
+              <div key={index}>- {user.name}</div>
+            ))}
+        </>
+      )}
     </>
   );
 }
