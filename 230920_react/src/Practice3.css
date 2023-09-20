@@ -1,0 +1,19 @@
+.form {
+  outline: rgb(146, 146, 146);
+  outline-style: groove;
+  margin-bottom: 15px;
+  padding: 5px;
+}
+
+input {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.result {
+  display: flex;
+}
+table {
+  margin-top: 10px;
+  border-style: groove;
+}
