@@ -11,7 +11,7 @@ class Practice3 extends Component {
       entries: [],
       filteredEntries: [],
       search: "",
-      selectedOption: "작성자",
+      selectedOption: "title",
     };
 
     this.writeButton = this.writeButton.bind(this);
@@ -26,8 +26,14 @@ class Practice3 extends Component {
       entries: [...entries, newEntry],
     });
   }
+  selectChange = (e) => {
+    this.setState({ selectedOption: e.target.value });
+    console.log("selectedOption", e.target.value);
+  };
   findButton() {
     const { search, entries, selectedOption } = this.state;
+    console.log("selectedOption", selectedOption);
+    console.log("entries", entries);
     const filteredEntries = entries.filter((entry) =>
       entry[selectedOption].includes(search)
     );
@@ -35,14 +41,13 @@ class Practice3 extends Component {
   }
   allButton() {
     const { entries } = this.state;
+    console.log(entries);
     this.setState({
-      entries: [...entries],
+      filteredEntries: entries,
+      search: "",
     });
   }
 
-  selectChange = (e) => {
-    this.setState({ selectChange: e.target.value });
-  };
   render() {
     const { writer, title, search, filteredEntries, selectedOption } =
       this.state;
@@ -65,8 +70,8 @@ class Practice3 extends Component {
           <button onClick={this.writeButton}>작성</button>
         </div>
         <select value={selectedOption} onChange={this.selectChange}>
-          <option value="작성자">제목</option>
-          <option value="제목">작성자</option>
+          <option value="title">제목</option>
+          <option value="writer">작성자</option>
         </select>
         <input
           value={search}

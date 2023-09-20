@@ -18,8 +18,8 @@ function App() {
       {/* <ChangeColor></ChangeColor> */}
       {/* <Disappear /> */}
       <Practice3 />
-      <ResultChangeColor />
-      <ResultDisappear />
+      {/* <ResultChangeColor />
+      <ResultDisappear /> */}
     </>
   );
 }
