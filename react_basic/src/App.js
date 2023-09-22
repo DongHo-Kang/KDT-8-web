@@ -5,6 +5,11 @@ import TestComponent from "./test";
 import Test2Component from "./test2";
 import ClassPropsComponent from "./ClassPropsComponent";
 import FunctionPropsComponent from "./FunctionPropsComponent";
+import LifeCycleClass from "./08LifeCycle/LifeCycleClass";
+import LifeCycleFunc from "./08LifeCycle/LifeCyccleFunc";
+import Practice1 from "./08LifeCycle/Practice1";
+import ResultPractice1 from "./08LifeCycle/ResultPractice1";
+import ResultPractice2 from "./08LifeCycle/ResultPractice2";
 function App() {
   return (
     <>
@@ -28,12 +33,17 @@ function App() {
       <FunctionComponent></FunctionComponent> */}
       {/* <ClassPropsComponent food="사과"></ClassPropsComponent>
       <ClassPropsComponent></ClassPropsComponent> */}
-      <FunctionPropsComponent
+      {/* <FunctionPropsComponent
         title="나의 하루는 4시 40분에 시작된다."
         author="김유진"
         price="13,500원"
         type="자기계발서"
-      ></FunctionPropsComponent>
+      ></FunctionPropsComponent> */}
+      {/* <LifeCycleClass /> */}
+      {/* <LifeCycleFunc /> */}
+      {/* <Practice1 /> */}
+      {/* <ResultPractice1 /> */}
+      <ResultPractice2 />
     </>
   );
 }
