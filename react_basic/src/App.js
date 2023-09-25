@@ -15,6 +15,8 @@ import SassComponent from "./10style/SassComponent";
 import CircleComponet1 from "./10style/CircleComponent1";
 import StylePractice from "./10style/StylePractice";
 import StyledComponent from "./10style/StyledComponent";
+import StyledPractice1 from "./10style/StyledPractice1";
+import StyledPractice2 from "./10style/StyledPractice2";
 function App() {
   return (
     <>
@@ -53,7 +55,9 @@ function App() {
       {/* <SassComponent /> */}
       {/* <CircleComponet1 /> */}
       {/* <StylePractice /> */}
-      <StyledComponent />
+      {/* <StyledComponent /> */}
+      {/* <StyledPractice1 /> */}
+      <StyledPractice2 />
     </>
   );
 }
