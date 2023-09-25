@@ -13,6 +13,7 @@ import Practice4Func from "./Practice4Func";
 import ResultChangeColor from "./ResultChangeColor";
 import ResultDisappear from "./ResultDisappear";
 import ResultPractice3 from "./ResultPractice3";
+import ResultPractice4Func from "./ResultPractice4Func";
 import ToggleFunc from "./ToggleFunc";
 function App() {
   const write = [];
@@ -33,7 +34,8 @@ function App() {
       {/* <ChangeColorFunc />
       <DisappearFunc /> */}
       {/* <Practice3Func /> */}
-      <Practice4Func />
+      {/* <Practice4Func /> */}
+      {/* <ResultPractice4Func /> */}
     </>
   );
 }
