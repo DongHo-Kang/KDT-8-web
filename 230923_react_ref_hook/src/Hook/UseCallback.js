@@ -1,27 +1,22 @@
-import { useState, useCallback } from "react";
+import React, { useState, useCallback } from 'react';
 
-export default function ParentComponent() {
+export default function UseCallback() {
   const [count, setCount] = useState(0);
-  const [inputValue, setInputValue] = useState("");
 
-  const IncrementCount = useCallback(() => {
+  const increment = () => {
+    setCount((prevCount) => prevCount + 1);
+    console.log('not useCallback count : ', count);
+  };
+
+  const incrementCount = useCallback(() => {
+    console.log('count : ', count);
     setCount((prevCount) => prevCount + 1);
   }, []);
+
   return (
     <>
-      <input onChange={(e) => setInputValue(e.target.value)} />
-      <ChildComponent1 onClick={IncrementCount} />
-      <ChildComponent2 />
-      <p> Count: {count}</p>
+      <button onClick={incrementCount}>Increment Count</button>
+      <p>Count: {count}</p>
     </>
   );
-}
-
-function ChildComponent1({ onClick }) {
-  console.log("child component render");
-  return <button onClick={onClick}>Increment Count</button>;
-}
-
-function ChildComponent2() {
-  return <button>Child component2</button>;
 }
