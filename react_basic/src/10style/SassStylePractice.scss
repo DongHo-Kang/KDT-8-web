@@ -1,0 +1,24 @@
+@import "./utils2.scss";
+
+.circles {
+  .circle {
+    position: relative;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    &.pink {
+      @include circle(pink);
+      @include rotate-circle(pinkAni, 100px);
+      animation-name: pinkAni;
+    }
+    &.yellow {
+      @include circle(yellow);
+      @include rotate-circle(yellowAni, 200px);
+      animation-name: yellowAni;
+    }
+    &.green {
+      @include circle(green);
+      @include rotate-circle(greenAni, 300px);
+      animation-name: greenAni;
+    }
+  }
+}

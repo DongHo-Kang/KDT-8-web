@@ -10,6 +10,11 @@ import LifeCycleFunc from "./08LifeCycle/LifeCyccleFunc";
 import Practice1 from "./08LifeCycle/Practice1";
 import ResultPractice1 from "./08LifeCycle/ResultPractice1";
 import ResultPractice2 from "./08LifeCycle/ResultPractice2";
+import Style from "./10style/Style";
+import SassComponent from "./10style/SassComponent";
+import CircleComponet1 from "./10style/CircleComponent1";
+import StylePractice from "./10style/StylePractice";
+import StyledComponent from "./10style/StyledComponent";
 function App() {
   return (
     <>
@@ -43,7 +48,12 @@ function App() {
       {/* <LifeCycleFunc /> */}
       {/* <Practice1 /> */}
       {/* <ResultPractice1 /> */}
-      <ResultPractice2 />
+      {/* <ResultPractice2 /> */}
+      {/* <Style /> */}
+      {/* <SassComponent /> */}
+      {/* <CircleComponet1 /> */}
+      {/* <StylePractice /> */}
+      <StyledComponent />
     </>
   );
 }
