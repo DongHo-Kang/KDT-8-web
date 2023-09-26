@@ -1,22 +1,26 @@
-import ClassComponent from "./ClassComponent";
-import FunctionComponent from "./FunctionComponent";
-import CircleComponet from "./CircleComponent";
-import TestComponent from "./test";
-import Test2Component from "./test2";
-import ClassPropsComponent from "./ClassPropsComponent";
-import FunctionPropsComponent from "./FunctionPropsComponent";
-import LifeCycleClass from "./08LifeCycle/LifeCycleClass";
-import LifeCycleFunc from "./08LifeCycle/LifeCyccleFunc";
-import Practice1 from "./08LifeCycle/Practice1";
-import ResultPractice1 from "./08LifeCycle/ResultPractice1";
-import ResultPractice2 from "./08LifeCycle/ResultPractice2";
-import Style from "./10style/Style";
-import SassComponent from "./10style/SassComponent";
-import CircleComponet1 from "./10style/CircleComponent1";
-import StylePractice from "./10style/StylePractice";
-import StyledComponent from "./10style/StyledComponent";
-import StyledPractice1 from "./10style/StyledPractice1";
-import StyledPractice2 from "./10style/StyledPractice2";
+// import ClassComponent from "./ClassComponent";
+// import FunctionComponent from "./FunctionComponent";
+// import CircleComponet from "./CircleComponent";
+// import TestComponent from "./test";
+// import Test2Component from "./test2";
+// import ClassPropsComponent from "./ClassPropsComponent";
+// import FunctionPropsComponent from "./FunctionPropsComponent";
+// import LifeCycleClass from "./08LifeCycle/LifeCycleClass";
+// import LifeCycleFunc from "./08LifeCycle/LifeCyccleFunc";
+// import Practice1 from "./08LifeCycle/Practice1";
+// import ResultPractice1 from "./08LifeCycle/ResultPractice1";
+// import ResultPractice2 from "./08LifeCycle/ResultPractice2";
+// import Style from "./11style/Style";
+// import SassComponent from "./11style/SassComponent";
+// import CircleComponet1 from "./11style/CircleComponent1";
+// import StylePractice from "./11style/StylePractice";
+// import StyledComponent from "./11style/StyledComponent";
+// import StyledPractice1 from "./11style/StyledPractice1";
+// import StyledPractice2 from "./11style/StyledPractice2";
+
+// import Router from "./Router";
+import { Outlet } from "react-router-dom";
+import Header from "./12Router/Header";
 function App() {
   return (
     <>
@@ -57,7 +61,12 @@ function App() {
       {/* <StylePractice /> */}
       {/* <StyledComponent /> */}
       {/* <StyledPractice1 /> */}
-      <StyledPractice2 />
+      {/* <StyledPractice2 /> */}
+      {/* ver1*/}
+      {/* <Router />  */}
+      {/* ver2 */}
+      <Header />
+      <Outlet /> {/*자식 컴포넌트들도 불러오는 것 */}
     </>
   );
 }
