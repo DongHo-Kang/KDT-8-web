@@ -19,6 +19,9 @@
 // import StyledPractice2 from "./11style/StyledPractice2";
 
 // import Router from "./Router";
+
+import Form from "./13Form/Form";
+
 import { Outlet } from "react-router-dom";
 import Header from "./12Router/Header";
 function App() {
@@ -65,8 +68,9 @@ function App() {
       {/* ver1*/}
       {/* <Router />  */}
       {/* ver2 */}
-      <Header />
-      <Outlet /> {/*자식 컴포넌트들도 불러오는 것 */}
+      {/* <Header />
+      <Outlet /> 자식 컴포넌트들도 불러오는 것 */}
+      <Form />
     </>
   );
 }
