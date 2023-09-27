@@ -1,6 +1,7 @@
 import { BrowserRouter } from "react-router-dom";
 import Main from "./12Router/Main";
 import Router from "./Router";
+import Form from "./13Form/Form";
 // import "./App.css";
 
 function App() {
@@ -41,7 +42,8 @@ function App() {
         <div className="navy"></div>
         <div className="purple"></div>
       </div> */}
-      <Router />
+      {/* <Router /> */}
+      <Form />
     </>
   );
 }
