@@ -26,6 +26,8 @@ import { Outlet } from "react-router-dom";
 import Header from "./12Router/Header";
 import LanguageProvider from "./14Context/LangProvider";
 import LanguageSelector from "./14Context/LangSelector";
+import { ThemeProvider } from "./14Context/store/theme-context";
+import ThemeSelector from "./14Context/ThemeSelector";
 function App() {
   return (
     <>
@@ -73,9 +75,13 @@ function App() {
       {/* <Header />
       <Outlet /> 자식 컴포넌트들도 불러오는 것 */}
       {/* <Form /> */}
-      <LanguageProvider>
+      {/* <LanguageProvider>
         <LanguageSelector />
-      </LanguageProvider>
+      </LanguageProvider> */}
+      <ThemeProvider>
+        <LanguageSelector />
+        <ThemeSelector />
+      </ThemeProvider>
     </>
   );
 }
