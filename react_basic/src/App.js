@@ -24,6 +24,8 @@ import Form from "./13Form/Form";
 
 import { Outlet } from "react-router-dom";
 import Header from "./12Router/Header";
+import LanguageProvider from "./14Context/LangProvider";
+import LanguageSelector from "./14Context/LangSelector";
 function App() {
   return (
     <>
@@ -70,7 +72,10 @@ function App() {
       {/* ver2 */}
       {/* <Header />
       <Outlet /> 자식 컴포넌트들도 불러오는 것 */}
-      <Form />
+      {/* <Form /> */}
+      <LanguageProvider>
+        <LanguageSelector />
+      </LanguageProvider>
     </>
   );
 }

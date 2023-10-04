@@ -2,6 +2,9 @@ import { BrowserRouter } from "react-router-dom";
 import Main from "./12Router/Main";
 import Router from "./Router";
 import Form from "./13Form/Form";
+import ThemeProvider from "./14Context/ThemeProvider";
+import ThemeSelector from "./14Context/ThemeSelector";
+import LangSelector from "./14Context/LangSelector";
 // import "./App.css";
 
 function App() {
@@ -43,7 +46,11 @@ function App() {
         <div className="purple"></div>
       </div> */}
       {/* <Router /> */}
-      <Form />
+      {/* <Form /> */}
+      <ThemeProvider>
+        <ThemeSelector />
+        <LangSelector />
+      </ThemeProvider>
     </>
   );
 }
