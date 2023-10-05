@@ -46,3 +46,11 @@
   height: 700px;
   background-color: purple;
 }
+.dark {
+  background-color: black;
+  color: white;
+}
+.light {
+  background-color: white;
+  color: black;
+}

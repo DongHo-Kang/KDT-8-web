@@ -5,7 +5,11 @@ import Form from "./13Form/Form";
 import ThemeProvider from "./14Context/ThemeProvider";
 import ThemeSelector from "./14Context/ThemeSelector";
 import LangSelector from "./14Context/LangSelector";
-// import "./App.css";
+import "./App.css";
+import { CartProvider } from "./14Context/store/cart-context";
+import ProductList from "./14Context/ProductList";
+import Cart from "./14Context/Cart";
+import CartItem from "./14Context/CartItem";
 
 function App() {
   // const name = "로이";
@@ -47,10 +51,14 @@ function App() {
       </div> */}
       {/* <Router /> */}
       {/* <Form /> */}
-      <ThemeProvider>
+      {/* <ThemeProvider>
         <ThemeSelector />
         <LangSelector />
-      </ThemeProvider>
+      </ThemeProvider> */}
+      <CartProvider>
+        <ProductList />
+        <Cart />
+      </CartProvider>
     </>
   );
 }
