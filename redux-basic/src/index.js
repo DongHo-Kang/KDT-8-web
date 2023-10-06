@@ -56,7 +56,8 @@
 // //   num.textContent = count;
 // // });
 
-// == To Dos //
+/*
+// == To Dos 실습 문제 코드//
 import { createStore } from "redux";
 
 const input = document.querySelector("input");
@@ -113,3 +114,37 @@ form.addEventListener("submit", (event) => {
   store.dispatch({ type: ADD_TODO, text: input.value });
   input.value = "";
 });
+*/
+/*
+//redux , legacy.js//
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./App";
+import { Provider } from "react-redux";
+import store from "./store/;egacy";
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(
+  <React.StrictMode>
+    <Provider store={store}>
+      <App />
+    </Provider>
+  </React.StrictMode>
+);
+*/
+
+//redux_toolkit , index.js //
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./App";
+import { Provider } from "react-redux";
+import store from "./store/index";
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(
+  <React.StrictMode>
+    <Provider store={store}>
+      <App />
+    </Provider>
+  </React.StrictMode>
+);
