@@ -10,14 +10,18 @@
 // }
 
 //redux_toolkit
-import Counter from "./Counter";
-import Login from "./Login";
+import Cart from "./Cart";
+// import Counter from "./Counter";
+// import Login from "./Login";
+import ProductList from "./ProductList";
 
 function App() {
   return (
     <>
-      <Login />
-      <Counter />
+      <ProductList />
+      <Cart />
+      {/* <Login />
+      <Counter /> */}
     </>
   );
 }
