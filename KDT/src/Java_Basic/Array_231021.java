@@ -37,6 +37,7 @@ public class Array_231021 {
 			System.out.print(value + " ");
 		}
 		
+		
 	}
 
 }
