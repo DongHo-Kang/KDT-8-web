@@ -24,6 +24,7 @@ public class Rectangle_Container {
 			newRect.setHeight(width);
 			newRect.setWidth(heith);
 			rect.add(newRect);
+			Area.getcount();
 		}
 		}
 		
@@ -33,6 +34,8 @@ public class Rectangle_Container {
             int area = r.calculateArea();
             System.out.println("가로: " + r.getWidth() + ", 세로: " + r.getHeight() + ", 넓이: " + area);
         }
+        System.out.println("Rectangle 인스턴스의 개수는: "+ Area.getcount());
+        
 		
 	}
 

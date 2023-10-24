@@ -4,6 +4,11 @@ public class Rectangle {
 
 	private int width;
 	private int height;
+	private static int count = 0;
+	
+	public int getcount() {
+		return count ++;
+	}
 	
 	public int calculateArea() {
 		return this.width * this.height;
