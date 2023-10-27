@@ -24,3 +24,4 @@ public class Practcie_Generic {
 	}
 
 }
+
